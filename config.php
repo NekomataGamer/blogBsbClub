@@ -12,7 +12,7 @@ if(ENVIRONMENT == 'development') {
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
 } else {
-	define("BASE_URL", "http://bsbclub.com.br/sistemablog/");
+	define("BASE_URL", "http://bsbclub.com.br/sistemblog/");
 	$config['dbname'] = 'nova_loja';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
