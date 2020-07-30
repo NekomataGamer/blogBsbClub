@@ -56,6 +56,21 @@ class Admin extends model {
         return $array;
     }
 
+    public function getFeaturedsPosts(){
+        $array = array();
+
+        $sql = "SELECT * FROM posts WHERE featured = :featured";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':featured', 1);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
     // CATEGORIES
 
     public function insertNewCat($title){

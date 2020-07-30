@@ -11,6 +11,8 @@ class homeController extends controller {
         $dados = array();
 
         $a = new Admin();
+        
+        $dados['listPostFeatured'] = $a->getFeaturedsPosts();
 
         $dados['listCategories'] = $a->listCategories();
 

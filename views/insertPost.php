@@ -58,3 +58,16 @@
     </div>
 </div>
 
+<!--Select2 js -->
+<script src="<?php echo BASE_URL;?>assets/blog/plugins/select2/select2.full.min.js"></script>
+
+<!-- WYSIWYG Editor js -->
+<script src="<?php echo BASE_URL;?>assets/blog/plugins/wysiwyag/jquery.richtext.js"></script>
+<script src="<?php echo BASE_URL;?>assets/blog/js/formeditor.js"></script>
+
+<!-- Select2 Plugin -->
+<link href="<?php echo BASE_URL;?>assets/blog/plugins/select2/select2.min.css" rel="stylesheet" />
+
+<!-- WYSIWYG Editor css -->
+<link href="<?php echo BASE_URL;?>assets/blog/plugins/wysiwyag/richtext.css" rel="stylesheet" />
+

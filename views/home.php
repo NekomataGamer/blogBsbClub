@@ -186,6 +186,7 @@
 					<!-- Wrapper for carousel items -->
 
 				
+					<?php foreach($listPostFeatured as $item):?>
 					<div class="item">
 						<div class="card mb-0">
 						
@@ -194,7 +195,7 @@
 								<img src="../../assets//images/brand/excellence group 2.jpg" alt="img" class="cover-image" width="185px" height="185px">
 							</div>
 							<div class="item-card7-overlaytext">
-                	<a href="http://www.excellenceeduc.com/http://bsbclub.com.br/sistema/classified.html#" class="text-white"> Educação</a>
+                			<a href="<?php echo $item['link'];?>" class="text-white"> Educação</a>
 								
 								
 							</div>
@@ -226,197 +227,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="card mb-0">
-						
-							<div class="item-card7-imgs">
-								<a href="http://bsbclub.com.br/sistema/acuuniversity.html"></a>
-								<img src="../../assets//images/brand/acu.png" alt="img" class="cover-image" widht="185px" height="185px">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="http://bsbclub.com.br/sistema/acuuniversity.html" class="text-white"> Educação</a>
-								
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="http://bsbclub.com.br/sistema/acuuniversity.html" class="text-dark"><h4 class="">ACU -  Absoulute Christian University</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										
-										<li><a href="https://goo.gl/maps/pFP8hzbi5CjkfJFT7" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Vitória</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 horas atrás</a></li>
-										<li><a href="tel:27 3020 5020" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 27  3020 5020</a></li>
-									</ul>
-									<p class="mb-0">Faça Mestrado e Doutorado online</p>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="footerimg d-flex mt-0 mb-0">
-									<div class="d-flex footerimg-l mb-0">
-										<img src="../../assets//images/faces/female/alexandre-150x150.jpg" alt="image" class="avatar brround  mr-2" widht="185px" height="185px">
-										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Alexandre Salvador<i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
-									</div>
-									<div class="mt-2 footerimg-r ml-auto">
-										<a href="#" class="text-muted" data-toggle="tooltip" data-placement="top" title="Add Wishlist"><i class="fa fa-heart"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-						
-							<div class="item-card7-imgs">
-								<a href="classified.html"></a>
-								<img src="../../assets//images/brand/curso.png" alt="img" class="cover-image" widht="185px" height="185px">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="classified.html" class="text-white"> Educação</a>
-								
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="classified.html" class="text-dark"><h4 class="">Absoulute On</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										
-										<li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Vila Velha</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 2 horas atrás</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 27 3020 5021</a></li>
-									</ul>
-									<p class="mb-0">Especializada em cursos profissionalizantes.</p>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="footerimg d-flex mt-0 mb-0">
-									<div class="d-flex footerimg-l mb-0">
-										<img src="../../assets//images/faces/female/alexandre-150x150.jpg" alt="image" class="avatar brround  mr-2">
-										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Alexandre Salvador<i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
-									</div>
-									<div class="mt-2 footerimg-r ml-auto">
-										<a href="#" class="text-pink" data-toggle="tooltip" data-placement="top" title="Remove from Wishlist"><i class="fa fa-heart"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-							
-							<div class="item-card7-imgs">
-								<a href="classified.html"></a>
-								<img src="../../assets//images/brand/BELLA ELLA - LOGO PRIMARIA NEGATIVA.png" alt="img" class="cover-image" widht="185px" height="185px">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="classified.html" class="text-white"> Beleza</a>
-								
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text  d-flex">
-										<a href="classified.html" class="text-dark"><h4 class="">Bella Ella</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										
-										<li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Brasil</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 horas atrás</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 27 0000 0000</a></li>
-									</ul>
-                  <br>
-									<p class="mb-0"><br><br></p>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="footerimg d-flex mt-0 mb-0">
-									<div class="d-flex footerimg-l mb-0">
-										<img src="../../assets//images/faces/female/alexandre-150x150.jpg" alt="image" class="avatar brround  mr-2">
-										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Alexandre Salvador<i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
-									</div>
-									<div class="mt-2 footerimg-r ml-auto">
-										<a href="classified.html" class="text-muted" data-toggle="tooltip" data-placement="top" title="Add Wishlist"><i class="fa fa-heart"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-						
-							<div class="item-card7-imgs">
-								<a href="http://bsbclub.com.br/sistema/xeducacional.html#"></a>
-								<img src="../../assets//images/brand/x educacional.png" alt="img" class="cover-image" width="185px" height="185px">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="http://bsbclub.com.br/sistema/xeducacional.html#" class="text-white"> Educação</a>
-							
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text  d-flex">
-										<a href="http://bsbclub.com.br/sistema/xeducacional.html#" class="text-dark"><h4 class=""> X Educacional</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-									
-										<li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Brasil</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 6 horas atrás</a></li>
-										<li><a href="tel:27 99609-7305" class="icons"><i class="icon icon-phone text-muted mr-1"></i>2799609-7305</a></li>
-									</ul>
-									<p class="mb-0">Uma empresa de consultoria e assessoria educacional.</p>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="footerimg d-flex mt-0 mb-0">
-									<div class="d-flex footerimg-l mb-0">
-										<img src="../../assets//images/faces/female/alexandre-150x150.jpg" alt="image" class="avatar brround  mr-2">
-										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Alexandre Salvador<i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
-									</div>
-									<div class="mt-2 footerimg-r ml-auto">
-										<a href="#" class="text-muted" data-toggle="tooltip" data-placement="top" title="Add Wishlist"><i class="fa fa-heart"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-							
-							<div class="item-card7-imgs">
-								<a href="classified.html"></a>
-								<img src="../../assets//images/brand/SUA BOLSA ONLINE - LOGO PRIMARIA.png" alt="img" class="cover-image" width="185px" height="185px">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="classified.html" class="text-white">Educação</a>
-								
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="classified.html" class="text-dark"><h4 class="">Sua Bolsa</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										
-										<li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Brasil</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 9 horas atrás</a></li>
-										<li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 27 0000 0000</a></li>
-									</ul>
-									<p class="mb-0"><br><br></p>
-								</div>
-							</div>
-							<div class="card-footer">
-								<div class="footerimg d-flex mt-0 mb-0">
-									<div class="d-flex footerimg-l mb-0">
-										<img src="../../assets//images/faces/female/alexandre-150x150.jpg" alt="image" class="avatar brround  mr-2">
-										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Alexandre Salvador<i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
-									</div>
-									<div class="mt-2 footerimg-r ml-auto">
-										<a href="#" class="text-pink" data-toggle="tooltip" data-placement="top" title="Remove from Wishlist"><i class="fa fa-heart"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php endforeach;?>
+					
+					
+					
+					
+					
 					
 				</div>
 			</div>

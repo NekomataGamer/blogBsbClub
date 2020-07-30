@@ -40,6 +40,10 @@
                                 </div>
                             </div>
 
+                            <?php if(isset($msg)):?>
+                                <div class="alert alert-info" style="margin: 50px 0px 50px 0px;"><?php echo $msg; ?></div>
+                            <?php endif;?>
+
                             <?php foreach($listPost as $item):?>
                                 <?php 
                                     $a = new Admin();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Jul-2020 às 19:23
+-- Tempo de geração: 30-Jul-2020 às 21:58
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.8
 
@@ -88,10 +88,13 @@ CREATE TABLE `posts` (
   `id_admin` int(11) NOT NULL,
   `id_category` int(11) NOT NULL,
   `author` varchar(100) NOT NULL DEFAULT '',
+  `description` varchar(300) NOT NULL DEFAULT '',
   `title` varchar(255) NOT NULL DEFAULT '',
   `body` text NOT NULL DEFAULT '',
   `date_added` datetime NOT NULL DEFAULT current_timestamp(),
   `discount` int(11) NOT NULL DEFAULT 0,
+  `featured` int(1) NOT NULL DEFAULT 0,
+  `link` varchar(550) NOT NULL DEFAULT '0',
   `status` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -99,12 +102,12 @@ CREATE TABLE `posts` (
 -- Extraindo dados da tabela `posts`
 --
 
-INSERT INTO `posts` (`id`, `id_admin`, `id_category`, `author`, `title`, `body`, `date_added`, `discount`, `status`) VALUES
-(7, 1, 9, 'Alison Bucker', 'Mais um Post', '<h1>topper</h1>', '2020-07-30 11:28:48', 0, 1),
-(8, 1, 3, 'Gabriela Passos', 'Segundo Post', 'To com fome', '2020-07-30 11:59:23', 5, 1),
-(9, 1, 2, '', 'Segundo Post', 'teste do corpo', '2020-07-30 13:05:55', 80, 1),
-(10, 1, 1, '', 'Dopamine Pagina de vendas01', 'koé rapaziada', '2020-07-30 13:09:43', 10, 1),
-(11, 1, 1, 'Alison Bucker', 'Teste com nome do autor', 'teste com o nome do altor', '2020-07-30 13:13:36', 50, 1);
+INSERT INTO `posts` (`id`, `id_admin`, `id_category`, `author`, `description`, `title`, `body`, `date_added`, `discount`, `featured`, `link`, `status`) VALUES
+(7, 1, 9, 'Alison Bucker', '', 'Mais um Post', '<h1>topper</h1>', '2020-07-30 11:28:48', 0, 1, '0', 1),
+(8, 1, 3, 'Gabriela Passos', '', 'Segundo Post', 'To com fome', '2020-07-30 11:59:23', 5, 1, '0', 1),
+(9, 1, 3, 'Sua mãe', '', 'Segundo Post', 'teste do corpo', '2020-07-30 13:05:55', 80, 1, '0', 1),
+(10, 1, 5, 'Gabriela Passos', 'lorem impsun is a default lorem impsun is a default lorem impsun is a default lorem dfgfdshgrtahgrth', 'Dopamine Pagina de vendas01', 'koé rapaziada', '2020-07-30 13:09:43', 10, 1, '0', 1),
+(11, 1, 5, 'Alison Bucker', 'lorem impsun is a lorem impsun is a default lorem impsun is a default lorem dfgfdshgrtahgrth default', 'Teste com nome do autor', 'teste com o nome do altor', '2020-07-30 13:13:36', 50, 1, 'http://www.excellenceeduc.com/http://bsbclub.com.br/sistema/classified.html#', 1);
 
 -- --------------------------------------------------------
 

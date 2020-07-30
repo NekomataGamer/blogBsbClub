@@ -129,7 +129,7 @@
         
       <header id="topo-site" style="display: none;">
         <div>
-           <a href="<?php echo BASE_URL;?>">ghjkghdkdghkd<img style="height: auto; width:200px; margin-left: 100px !important;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+           <a href="<?php echo BASE_URL;?>"><img style="height: auto; width:200px; margin-left: 100px !important;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
         </div>
       </header>
       <input type="checkbox" id="chk" >
@@ -168,10 +168,10 @@
 			<div class="horizontal-main bg-dark-transparent clearfix" style="background-color: #413e3f; height: 110px" id="menu-none">
 				<div class="horizontal-mainwrapper container clearfix">
 					<div class="desktoplogo" style="margin-top: -18px;">
-						<a href="index.html"><img style="height: 110px; width:auto;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+						<a href="<?php echo BASE_URL;?>"><img style="height: 110px; width:auto;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
 					</div>
 					<div class="desktoplogo-1" style="margin-top: -25px;">
-						<a href="index.html"><img style="height: ; width:200px;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+						<a href="<?php echo BASE_URL;?>"><img style="height: ; width:200px;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
 					</div>
 					<!--Nav-->
 					<nav class="horizontalMenu clearfix d-md-flex">

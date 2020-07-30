@@ -13,6 +13,9 @@ class categoriesController extends controller {
         $a = new Admin();
 
         $dados['listPost'] = $a->listPost($id_category);
+        if(empty($dados['listPost'])){
+            $dados['msg'] = "Ainda não existe nada nesta categoria";
+        }
 
         $this->loadTemplate('categories', $dados);
     }
