@@ -176,19 +176,19 @@
 					<!--Nav-->
 					<nav class="horizontalMenu clearfix d-md-flex">
 						<ul class="horizontalMenu-list" style="margin-top: 15px;">
-							<li aria-haspopup="true"><a href="#" class="active" style="color: #fff !important;">Inicio </a>
+							<li aria-haspopup="true"><a href="<?php echo BASE_URL."";?>"  style="color: #fff !important;">Inicio </a>
 								
 							</li>
-							<li aria-haspopup="true"><a href="about.html" style="color: #fff !important;">Sobre </a></li>
+							<li aria-haspopup="true"><a href="<?php echo BASE_URL."pages/about";?>" style="color: #fff !important;">Sobre </a></li>
 
 
-							<li aria-haspopup="true"><a href="blog-grid.html" style="color: #fff !important;">Notícias </a>
+							<li aria-haspopup="true"><a href="<?php echo BASE_URL."pages/news";?>" style="color: #fff !important;">Notícias </a>
 								
 							</li>
-							<li aria-haspopup="true"><a href="categories.html" style="color: #fff !important;">Categorias </a>
+							<li aria-haspopup="true"><a href="<?php echo BASE_URL."pages/categories";?>" style="color: #fff !important;">Categorias </a>
 
 							</li>
-							<li aria-haspopup="true"><a href="contact.html" style="color: #fff !important;"> Contato <span class="wsarrow"></span></a></li>
+							<li aria-haspopup="true"><a href="<?php echo BASE_URL."pages/contact";?>" style="color: #fff !important;"> Contato <span class="wsarrow"></span></a></li>
 							<li aria-haspopup="true" class="d-lg-none mt-5 pb-5 mt-lg-0">
 							
 							</li>
@@ -207,25 +207,28 @@
 
 		<?php $this->loadViewInTemplate($viewName, $viewData); ?>
 
-      
-    
-    
-      
-      
-    
-    
-    
-    
-
-		
-
-		
-
-		
-
-		
-
-		
+		<section class="sptb bg-white border-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-xl-6 col-md-12">
+						<div class="sub-newsletter">
+							<h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Se Inscreva para Receber Novidades</h3>
+							<p class="mb-0">Cadastre seu email para ficar por dentro das nossas novidades</p>
+						</div>
+					</div>
+					<div class="col-lg-5 col-xl-6 col-md-12">
+						<div class="input-group sub-input mt-1">
+							<input type="text" class="form-control input-lg " placeholder="Seu email">
+							<div class="input-group-append ">
+								<button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
+									Enviar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 
 		<!--Footer Section-- (EDITADO)-->
