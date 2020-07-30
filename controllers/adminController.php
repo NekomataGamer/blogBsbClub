@@ -62,7 +62,7 @@ class adminController extends controller {
             }
 
 
-            $this->loadView('insertPost', $dados);
+            $this->loadTemplateAdm('insertPost', $dados);
         }else{
             header("Location: ".BASE_URL."admin/login");
         }
