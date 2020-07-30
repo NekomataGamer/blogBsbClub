@@ -42,8 +42,10 @@
 
                             <?php foreach($listPost as $item):?>
                                 <?php 
-                                    $a = new Admin;
-                                    $dadosCategory = $a->getDadosFromCategory($item['id']);
+                                    $a = new Admin();
+                                    
+                                    $dadosCategory = $a->getDadosFromCategory($item['id_category']);
+                                    
                                 ?>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab-11">
@@ -73,7 +75,7 @@
                                                     </div>
                                                     <div class="card-footer pt-4 pb-4">
                                                         <div class="item-card9-footer d-flex">
-                                                            
+                                                            Por: <?php echo $item['author'];?>
                                                             <div class="ml-auto">
                                                                 <div class="rating-stars block">
                                                                     <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
