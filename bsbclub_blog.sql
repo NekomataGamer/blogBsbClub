@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Jul-2020 às 20:09
+-- Tempo de geração: 30-Jul-2020 às 19:23
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.8
 
@@ -30,8 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `login` varchar(50) NOT NULL,
-  `pass` varchar(32) NOT NULL
+  `passwd` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `admin`
+--
+
+INSERT INTO `admin` (`id`, `login`, `passwd`) VALUES
+(1, 'AlisonBucker', '17f8365416be129cbc7701838a8e5349');
 
 -- --------------------------------------------------------
 
@@ -43,8 +50,32 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `icon` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0 COMMENT '0 inativa 1 ativa'
+  `status` int(11) NOT NULL DEFAULT 1 COMMENT '0 inativa 1 ativa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `categories`
+--
+
+INSERT INTO `categories` (`id`, `title`, `icon`, `status`) VALUES
+(3, 'Academias', 'excercise', 1),
+(4, 'Veículos', 'eco-car', 1),
+(5, 'Escritórios', 'company', 1),
+(6, 'Turismo', 'traveler', 1),
+(7, 'Educação', 'education', 1),
+(8, 'Imóveis', 'home', 1),
+(9, 'Moda', 'sarafan', 1),
+(10, 'Decoração', 'living-room', 1),
+(11, 'Eletrônicos', 'tv', 1),
+(12, 'Musica e Hobbie', 'musical-notes', 1),
+(13, 'Esportes e Lazer', 'sport', 1),
+(14, 'Saúde', 'health', 1),
+(15, 'Beleza', 'beleza', 1),
+(16, 'Moda', 'sarafan', 1),
+(17, 'Decoração', 'living-room', 1),
+(18, 'Eletrônicos', 'tv', 1),
+(19, 'Musica e Hobbie', 'musical-notes', 1),
+(20, 'Esportes e Lazer', 'sport', 1);
 
 -- --------------------------------------------------------
 
@@ -56,11 +87,24 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `id_admin` int(11) NOT NULL,
   `id_category` int(11) NOT NULL,
+  `author` varchar(100) NOT NULL DEFAULT '',
   `title` varchar(255) NOT NULL DEFAULT '',
   `body` text NOT NULL DEFAULT '',
-  `date_added` datetime NOT NULL,
-  `status` text NOT NULL DEFAULT ''
+  `date_added` datetime NOT NULL DEFAULT current_timestamp(),
+  `discount` int(11) NOT NULL DEFAULT 0,
+  `status` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id`, `id_admin`, `id_category`, `author`, `title`, `body`, `date_added`, `discount`, `status`) VALUES
+(7, 1, 9, 'Alison Bucker', 'Mais um Post', '<h1>topper</h1>', '2020-07-30 11:28:48', 0, 1),
+(8, 1, 3, 'Gabriela Passos', 'Segundo Post', 'To com fome', '2020-07-30 11:59:23', 5, 1),
+(9, 1, 2, '', 'Segundo Post', 'teste do corpo', '2020-07-30 13:05:55', 80, 1),
+(10, 1, 1, '', 'Dopamine Pagina de vendas01', 'koé rapaziada', '2020-07-30 13:09:43', 10, 1),
+(11, 1, 1, 'Alison Bucker', 'Teste com nome do autor', 'teste com o nome do altor', '2020-07-30 13:13:36', 50, 1);
 
 -- --------------------------------------------------------
 
@@ -110,19 +154,19 @@ ALTER TABLE `posts_images`
 -- AUTO_INCREMENT de tabela `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -10,6 +10,10 @@ class homeController extends controller {
     public function index() {
         $dados = array();
 
+        $a = new Admin();
+
+        $dados['listCategories'] = $a->listCategories();
+
         $this->loadTemplate('home', $dados);
     }
 

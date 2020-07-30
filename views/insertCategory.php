@@ -19,7 +19,7 @@
                 <form method="POST">
                     <div class="form-group ">
                         <label class="form-label">Titulo da Categoria</label>
-                        <input type="text" class="form-control w-100" placeholder="Enter Title here" name="title">
+                        <input type="text" class="form-control w-100" placeholder="Enter Title here" name="title" autofocus>
                     </div>
 
                     <div class="form-group">

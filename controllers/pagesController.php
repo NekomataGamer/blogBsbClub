@@ -34,11 +34,4 @@ class pagesController extends controller {
 
         $this->loadTemplate('contact', $dados);
     }
-
-    public function showcase(){
-        $dados = array();
-
-        $this->loadTemplate('showcase', $dados);
-    }
-
 }

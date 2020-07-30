@@ -1,4 +1,4 @@
-<div class="bg-white border-bottom">
+<div class="bg-white border-bottom" style="margin-top: 50px;">
     <div class="container">
         <div class="page-header">
             <h4 class="page-title">Lista Beleza</h4>

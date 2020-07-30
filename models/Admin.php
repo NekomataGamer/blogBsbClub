@@ -35,7 +35,7 @@ class Admin extends model {
         return true;
     }
 
-    public function listPost(){
+    public function listPost($id_category){
         $array = array();
 
         $sql = "SELECT * FROM posts";
