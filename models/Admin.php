@@ -35,11 +35,19 @@ class Admin extends model {
         return true;
     }
 
-    public function listPost($id_category){
+    public function listPost($id_category = ''){
         $array = array();
 
-        $sql = "SELECT * FROM posts";
-        $sql = $this->db->query($sql);
+
+        if($id_category != ''){
+            $sql = "SELECT * FROM posts WHERE id_category = :id_category";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':id_category', $id_category);
+            $sql->execute();
+        }else{
+            $sql = "SELECT * FROM posts";
+            $sql = $this->db->query($sql);
+        }
 
         if($sql->rowCount() > 0){
             $array = $sql->fetchAll();
@@ -66,6 +74,21 @@ class Admin extends model {
         
         if($sql->rowCount() > 0){
             $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function getDadosFromCategory($id){
+        $array = array();
+
+        $sql = "SELECT * FROM categories WHERE id = :id";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetch();
         }
 
         return $array;

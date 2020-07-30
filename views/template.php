@@ -129,7 +129,7 @@
         
       <header id="topo-site" style="display: none;">
         <div>
-           <a href="index.html"><img style="height: auto; width:200px; margin-left: 100px !important;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+           <a href="<?php echo BASE_URL;?>">ghjkghdkdghkd<img style="height: auto; width:200px; margin-left: 100px !important;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
         </div>
       </header>
       <input type="checkbox" id="chk" >
