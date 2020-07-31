@@ -1,5 +1,5 @@
 <?php
-class Uploader extends model {
+class Uploader extends Model {
     public function upload($images, $id, $to){
         //Manipular Imagens
 

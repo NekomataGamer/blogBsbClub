@@ -1,5 +1,5 @@
 <?php
-class showcaseController extends controller {
+class showcaseController extends Controller {
     public function index(){
         $dados = array();
 

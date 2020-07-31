@@ -1,5 +1,5 @@
 <?php
-class Admin extends model {
+class Admin extends Model {
     public function login($login, $pass){
         $array = array();
 

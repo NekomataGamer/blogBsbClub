@@ -13,12 +13,12 @@ if(ENVIRONMENT == 'development') {
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
 } else {
-	define("BASE_URL", "http://bsbclub.com.br/sistemblog/");
+	define("BASE_URL", "http://bsbclub.com.br/blogBsbClub/");
 	define("PATH_SITE", "media/");
-	$config['dbname'] = 'cosersal_bsbClub';
+	$config['dbname'] = 'bsbclubc_blog';
 	$config['host'] = 'localhost';
-	$config['dbuser'] = 'cosersal_alisonBucker';
-	$config['dbpass'] = 'ZOInNyIcBuD9';
+	$config['dbuser'] = 'cbsbclubc_bucker';
+	$config['dbpass'] = 'Bm}YSYrkw_a{';
 }
 
 $db = new PDO("mysql:dbname=".$config['dbname'].";host=".$config['host'], $config['dbuser'], $config['dbpass']);
