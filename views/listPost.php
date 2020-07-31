@@ -81,6 +81,13 @@
                                 </li>
                             </ul>
                         </div>
+                  
+                        <?php if(isset($_GET['status']) && $_GET['status'] == 'success'):?>
+                            <div class="alert alert-success">Post Excluido</div>
+                        <?php elseif(isset($_GET['status']) && $_GET['status'] == 'error'):?>
+                            <div class="alert alert-danger">Ocorreu um erro inesperado</div>
+                        <?php endif;?>
+                        
                         <div class="table-responsive border-top">
                             <table class="table card-table table-bordered table-hover table-vcenter text-nowrap">
                                 <tbody>
@@ -114,8 +121,8 @@
                                             <td><?php echo $item['author'];?></td>
                                             <td><?php echo $item['date_added'];?></td>
                                             <td>
-                                                <a href="#" class="btn btn-info">editar</a>
-                                                <a href="#" class="btn btn-danger">excluir</a>
+                                                <a href="<?php echo BASE_URL."admin/editPost/".$item['id'];?>" class="btn btn-info">editar</a>
+                                                <a href="<?php echo BASE_URL."admin/deletePost/".$item['id'];?>" class="btn btn-danger">excluir</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;?>

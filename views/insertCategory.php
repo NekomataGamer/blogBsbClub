@@ -16,7 +16,7 @@
                 <?php if(isset($msg)):?>
                     <div class="alert alert-success"><?php echo $msg;?></div>
                 <?php endif;?>
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <div class="form-group ">
                         <label class="form-label">Titulo da Categoria</label>
                         <input type="text" class="form-control w-100" placeholder="Enter Title here" name="title" autofocus>
@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <label class="form-label">Upload do Icone da Categoria</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="example-file-input-custom">
+                            <input type="file" class="custom-file-input" name="icon[]">
                             <label class="custom-file-label">Upload Icone</label>
                         </div>
                     </div>

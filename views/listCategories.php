@@ -111,8 +111,8 @@
                                             <td><?php echo $item['title'];?></td>
                                             <td><?php echo $item['icon'];?></td>
                                             <td>
-                                                <a href="#" class="btn btn-info">editar</a>
-                                                <a href="#" class="btn btn-danger">excluir</a>
+                                                <a href="<?php echo BASE_URL."admin/editCategory/".$item['id'];?>" class="btn btn-info">editar</a>
+                                                <a href="<?php echo BASE_URL."admin/deleteCategory/".$item['id'];?>" class="btn btn-danger">excluir</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;?>

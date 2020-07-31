@@ -184,25 +184,29 @@
 				</div>
 				<div id="myCarousel2" class="owl-carousel owl-carousel-icons2">
 					<!-- Wrapper for carousel items -->
-
+					
 				
 					<?php foreach($listPostFeatured as $item):?>
+						<?php 
+							$a = new Admin();
+							$categoryName = $a->getDadosFromCategory($item['id_category']);
+						?>
 					<div class="item">
 						<div class="card mb-0">
 						
 							<div class="item-card7-imgs">
-								<a href="http://bsbclub.com.br/sistema/classified.html#" ></a>
-								<img src="../../assets//images/brand/excellence group 2.jpg" alt="img" class="cover-image" width="185px" height="185px">
+								<a href="<?php echo BASE_URL."showcase/".$item['id'];?>" ></a>
+								<img src="<?php echo BASE_URL."media/posts/".$item['images'][0]['urlf'];?>" alt="img" class="cover-image" width="185px" height="185px">
 							</div>
 							<div class="item-card7-overlaytext">
-                			<a href="<?php echo $item['link'];?>" class="text-white"> Educação</a>
+                			<a href="<?php echo $item['link'];?>" class="text-white"> <?php echo $categoryName['title'];?></a>
 								
 								
 							</div>
 							<div class="card-body">
 								<div class="item-card7-desc">
 									<div class="item-card7-text">
-										<a href="http://bsbclub.com.br/sistema/classified.html#" class="text-dark"><h4 class="">Excellence Group</h4></a>
+										<a href="<?php echo BASE_URL."showcase/".$item['id'];?>" class="text-dark"><h4 class=""><?php echo $item['title'];?></h4></a>
 									</div>
 									<ul class="item-cards7-ic mb-0">
 										
@@ -210,19 +214,19 @@
 										<li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 1 hora atrás</a></li>
 										<li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i>27 99801-1100</a></li>
 									</ul>
-									<p class="mb-0">Cursos de atualização e Aperfeiçoamento</p>
+									<p class="mb-0"><?php echo $item['description'];?></p>
                             
 								</div>
 							</div>
 							<div class="card-footer">
 								<div class="footerimg d-flex mt-0 mb-0">
-									<div class="d-flex footerimg-l mb-0">
-										<img src="../../assets//images/faces/male/Cristiano-PNG.png" alt="image" class="avatar brround  mr-2">
-										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Cristiano<i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
+									<div class="d-flex footerimg-l mb-0" style="background-color: #fff;">
+										<img src="<?php echo BASE_URL;?>assets/blog/images/avatar.png" alt="image" class="avatar brround  mr-2">
+										<h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0"><?php echo $item['author'];?><i class="icon icon-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
 									</div>
-									<div class="mt-2 footerimg-r ml-auto">
+									<!-- <div class="mt-2 footerimg-r ml-auto">
 										<a href="#" class="text-muted" data-toggle="tooltip" data-placement="top" title="Add Wishlist"><i class="fa fa-heart"></i></a>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>

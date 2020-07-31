@@ -1,6 +1,6 @@
 <?php
 class showcaseController extends controller {
-    public function showcase(){
+    public function index(){
         $dados = array();
 
         

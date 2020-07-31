@@ -51,13 +51,20 @@ class adminController extends controller {
             $dados['listCategories'] = $a->listCategories();
             
             if(isset($_POST['title']) && !empty($_POST['title'])){
+                
                 $title = addslashes($_POST['title']);
+                $description = addslashes($_POST['description']);
                 $category = addslashes($_POST['category']);
                 $body = addslashes($_POST['body']);
                 $althor_name = addslashes($_POST['althor_name']);
+                $link = addslashes($_POST['link']);
+                $featured = addslashes($_POST['featured']);
 
-                if($a->insertPost($title, $category, $body, $althor_name)){
-                    $dados['msg'] = "Post Adicionado!";
+                $images = (!empty($_FILES['images']))?$_FILES['images']:array();
+
+                $idPost = $a->insertPost($title, $category, $body, $description, $althor_name, $link, $featured, $images);
+                if($idPost){
+                    header('Location: '.BASE_URL."admin/editPost/".$idPost."/?status=success");
                 }
             }
 
@@ -82,6 +89,51 @@ class adminController extends controller {
         }
     }
 
+    public function editPost($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+
+            if(isset($_POST['title']) && !empty($_POST['title'])){
+                $title = addslashes($_POST['title']);
+                $description = addslashes($_POST['description']);
+                $category = addslashes($_POST['category']);
+                $body = addslashes($_POST['body']);
+                $author = addslashes($_POST['author_name']);
+                $link = addslashes($_POST['link']);
+                $featured = addslashes($_POST['featured']);
+
+                if($a->editPost($title, $category, $body, $author, $link, $featured, $id)){
+                    $dados['msg'] = "Post Editado"; 
+                }
+            }
+
+            $dados['dataPost'] = $a->getPostData($id);
+            $dados['listCategories'] = $a->listCategories();
+
+            $this->loadTemplateAdm('editPost', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function deletePost($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+
+            if($a->deletePost($id)){
+                header('Location: '.BASE_URL.'admin/listPost/?status=success');
+            }else{
+                header('Location: '.BASE_URL.'admin/listPost/?status=error');
+            }
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
     // Categorias
     public function insertCategory(){
         if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
@@ -91,7 +143,8 @@ class adminController extends controller {
 
             if(isset($_POST['title']) && !empty($_POST['title'])){
                 $title = addslashes($_POST['title']);
-                if($a->insertNewCat($title)){
+                $icon = $_FILES;
+                if($a->insertNewCat($title, $icon)){
                     $dados['msg'] = "Categoria Adicionada!";
                 }
             }
@@ -116,4 +169,65 @@ class adminController extends controller {
         }
     }
 
+    public function editCategory($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+
+            if(isset($_POST['title']) && !empty($_POST['title'])){
+                $title = addslashes($_POST['title']);
+
+                if($a->editCategory($title, $id)){
+                    $dados['msg'] = "Categoria Editada"; 
+                }
+            }
+
+            if(isset($_POST['title']) && !empty($_POST['title'])){
+                $title = addslashes($_POST['title']);
+                
+                if($a->editCategory($title, $id)){
+                    $dados['msg'] = "Categoria editada";
+                }
+            }
+
+            $dados['dataCategory'] = $a->getDadosFromCategory($id);
+
+            $this->loadTemplateAdm('editCategory', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function deleteCategory($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+
+            if($a->deleteCategory($id)){
+                header('Location: '.BASE_URL.'admin/listCategories/?status=success');
+            }else{
+                header('Location: '.BASE_URL.'admin/listCategories/?status=error');
+            }
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function delImages($url){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+
+            if($a->deleteImages($url)){
+                // header('Location: '.BASE_URL.'admin/editPost/'.$id);
+            }else{
+                // header('Location: '.BASE_URL.'admin/listCategories/?status=error');
+            }
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
 }
