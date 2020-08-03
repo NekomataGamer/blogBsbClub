@@ -20,16 +20,16 @@
                 <form method="POST" enctype="multipart/form-data">
                     <div class="form-group ">
                         <label class="form-label">Titulo do Post</label>
-                        <input type="text" class="form-control w-100"  placeholder="Enter Title here" name="title">
+                        <input type="text" class="form-control w-100"  placeholder="Insira o titulo do Anúncio aqui" name="title">
                     </div>
 
                     <div class="form-group ">
-                        <label class="form-label">Description</label>
-                        <input type="text" class="form-control w-100"  placeholder="Enter Title here" name="description">
+                        <label class="form-label">Descrição</label>
+                        <input type="text" class="form-control w-100"  placeholder="Coloque a descrição do Anúncio aqui" name="description">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Select Category</label>
+                        <label class="form-label">Selecionar Categoria</label>
                         <select class="form-control" data-placeholder="Choose Browser" name="category">
                             <?php foreach($listCategories as $item):?>
                                 <option value="<?php echo $item['id'];?>"><?php echo $item['title'];?></option>
@@ -51,12 +51,27 @@
                     
                     <div class="form-group ">
                         <label class="form-label">Nome do Autor</label>
-                        <input type="text" class="form-control w-100"  placeholder="Enter Title here" name="althor_name">
+                        <input type="text" class="form-control w-100"  placeholder="Nome do autor" name="althor_name">
                     </div>
 
                     <div class="form-group ">
                         <label class="form-label">Link</label>
-                        <input type="text" class="form-control w-100"  placeholder="Enter Title here" name="link">
+                        <input type="text" class="form-control w-100"  placeholder="Link do anúncio" name="link">
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control w-100"  placeholder="Email do anunciante" name="email">
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="form-label">Telefone</label>
+                        <input type="text" class="form-control w-100"  placeholder="Telefone do anunciante" name="phone">
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="form-label">Mapa</label>
+                        <input type="text" class="form-control w-100"  placeholder="Insira o link do mapa" name="map">
                     </div>
 
                     <div class="form-group">

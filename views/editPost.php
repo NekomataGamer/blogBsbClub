@@ -21,7 +21,7 @@
                     <div class="alert alert-success">Anúncio Criado, agora você pode edita-lo</div>
                 <?php endif;?>
 
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <?php if(isset($dataPost['title'])):?>
                         <div class="form-group ">
                             <label class="form-label">Titulo do Post</label>
@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label class="form-label">Upload Imagens do Slider</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="example-file-input-custom">
+                            <input type="file" class="custom-file-input" name="images[]" multiple>
                             <label class="custom-file-label">Upload Imagens</label>
                         </div>
                     </div>
@@ -97,6 +97,43 @@
                         <div class="form-group ">
                             <label class="form-label">Link</label>
                             <input type="text" class="form-control w-100"  placeholder="Enter Title here" name="link">
+                        </div>
+                    <?php endif;?>
+
+                    <?php if(isset($dataPost['email'])):?>
+                        <div class="form-group ">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control w-100"  placeholder="Email do anunciante" name="email" <?php echo $dataPost['email'];?>>
+                    </div>
+                    <?php else:?>
+                        <div class="form-group ">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control w-100"  placeholder="Email do anunciante" name="email">
+                        </div>
+                    <?php endif;?>
+
+                    
+                    <?php if(isset($dataPost['telefone'])):?>
+                        <div class="form-group ">
+                            <label class="form-label">Telefone</label>
+                            <input type="text" class="form-control w-100"  placeholder="Telefone do anunciante" name="phone" value="<?php echo $dataPost['telefone'];?>">
+                        </div>
+                    <?php else:?>
+                        <div class="form-group ">
+                            <label class="form-label">telefone</label>
+                            <input type="text" class="form-control w-100"  placeholder="Email do anunciante" name="email">
+                        </div>
+                    <?php endif;?>
+
+                    <?php if(isset($dataPost['map'])):?>
+                        <div class="form-group ">
+                            <label class="form-label">Mapa</label>
+                            <input type="text" class="form-control w-100"  placeholder="Insira o link do mapa" name="map" value="<?php echo $dataPost['map'];?>">
+                        </div>
+                    <?php else:?>
+                        <div class="form-group ">
+                            <label class="form-label">Mapa</label>
+                            <input type="text" class="form-control w-100"  placeholder="Email do anunciante" name="map">
                         </div>
                     <?php endif;?>
 

@@ -59,10 +59,13 @@ class adminController extends Controller {
                 $althor_name = addslashes($_POST['althor_name']);
                 $link = addslashes($_POST['link']);
                 $featured = addslashes($_POST['featured']);
+                $email = addslashes($_POST['email']);
+                $phone = addslashes($_POST['phone']);
+                $map = addslashes($_POST['map']);
 
                 $images = (!empty($_FILES['images']))?$_FILES['images']:array();
 
-                $idPost = $a->insertPost($title, $category, $body, $description, $althor_name, $link, $featured, $images);
+                $idPost = $a->insertPost($title, $category, $body, $description, $althor_name, $link, $featured, $email, $phone, $map, $images);
                 if($idPost){
                     header('Location: '.BASE_URL."admin/editPost/".$idPost."/?status=success");
                 }
@@ -103,8 +106,13 @@ class adminController extends Controller {
                 $author = addslashes($_POST['author_name']);
                 $link = addslashes($_POST['link']);
                 $featured = addslashes($_POST['featured']);
+                $email = addslashes($_POST['email']);
+                $phone = addslashes($_POST['phone']);
+                $map = addslashes($_POST['map']);
 
-                if($a->editPost($title, $category, $body, $author, $link, $featured, $id)){
+                $images = (!empty($_FILES['images']))?$_FILES['images']:array();
+                
+                if($a->editPost($title, $category, $body, $author, $link, $featured, $email, $phone, $map, $images, $id)){
                     $dados['msg'] = "Post Editado"; 
                 }
             }
@@ -143,7 +151,7 @@ class adminController extends Controller {
 
             if(isset($_POST['title']) && !empty($_POST['title'])){
                 $title = addslashes($_POST['title']);
-                $icon = $_FILES;
+                $icon = (!empty($_FILES['icon']))?$_FILES['icon']:array();
                 if($a->insertNewCat($title, $icon)){
                     $dados['msg'] = "Categoria Adicionada!";
                 }

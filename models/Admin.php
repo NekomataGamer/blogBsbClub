@@ -22,8 +22,8 @@ class Admin extends Model {
 
     // POSTS
 
-    public function insertPost($title, $category, $body, $description, $althor, $link, $featured, $images){
-        $sql = "INSERT INTO posts SET id_admin = :id_admin, id_category = :id_category, title = :title, body = :body, author = :author_name, description = :description, featured = :featured, link = :link";
+    public function insertPost($title, $category, $body, $description, $althor, $link, $featured, $email, $phone, $map, $images){
+        $sql = "INSERT INTO posts SET id_admin = :id_admin, id_category = :id_category, title = :title, body = :body, author = :author_name, description = :description, featured = :featured, email = :email, telefone = :telefone, map = :map, link = :link";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_admin', $_SESSION['login_adm_bsb']);
         $sql->bindValue(':id_category', $category);
@@ -32,6 +32,9 @@ class Admin extends Model {
         $sql->bindValue(':author_name', $althor);
         $sql->bindValue(':description', $description);
         $sql->bindValue(':featured', $featured);
+        $sql->bindValue(':email', $email);
+        $sql->bindValue(':telefone', $phone);
+        $sql->bindValue(':map', $map);
         $sql->bindValue(':link', $link);
         $sql->execute();
 
@@ -130,9 +133,10 @@ class Admin extends Model {
     }
 
     
+    public function editPost($title, $category, $body, $author, $link, $featured, $email, $phone, $map, $images, $id){
+        $u = new Uploader();
 
-    public function editPost($title, $category, $body, $author, $link, $featured, $id){
-        $sql = "UPDATE posts SET title = :title, id_category = :category, body = :body, author = :author, link = :link, featured = :featured WHERE id = :id";
+        $sql = "UPDATE posts SET title = :title, id_category = :category, body = :body, author = :author, link = :link, featured = :featured, email = :email, telefone =:phone, map = :map WHERE id = :id";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':title', $title);
         $sql->bindValue(':category', $category);
@@ -140,8 +144,13 @@ class Admin extends Model {
         $sql->bindValue(':author', $author);
         $sql->bindValue(':link', $link);
         $sql->bindValue(':featured', $featured);
+        $sql->bindValue(':email', $email);
+        $sql->bindValue(':phone', $phone);
+        $sql->bindValue(':map', $map);
         $sql->bindValue(':id', $id);
         $sql->execute();
+
+        $u->upload($images, $id, 'post');
         
         return true;
     }

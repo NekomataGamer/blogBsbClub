@@ -142,14 +142,14 @@ class Uploader extends Model {
             $img = imagecreatetruecolor($width, $height);
             imagecopyresampled($img, $o_img, -$px, -$py, 0, 0, $img_w, $img_h, $o_width, $o_height);
 
-            $filename = md5(time().rand(0, 9999).rand(0,9999)).'.jpg';
+            $filename = md5(time().rand(0, 9999).rand(0,9999)).'.png';
 
             imagejpeg($img, PATH_SITE.'categories/'.$filename);
 
-            $sql = "INSERT INTO posts_images SET id_post = :id_post, urlf = :urlf";
+            $sql = "UPDATE categories SET icon = :icon WHERE id = :id";
             $sql = $this->db->prepare($sql);
-            $sql->bindValue(':id_post', $id);
-            $sql->bindValue(':urlf', $filename);
+            $sql->bindValue(':id', $id);
+            $sql->bindValue(':icon', $filename);
             $sql->execute();
         }
     }

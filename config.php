@@ -13,12 +13,13 @@ if(ENVIRONMENT == 'development') {
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
 } else {
-	define("BASE_URL", "http://bsbclub.com.br/blogBsbClub/");
+	define("BASE_URL", "http://quarentenafit.dopaminefit.com.br/");
 	define("PATH_SITE", "media/");
-	$config['dbname'] = 'bsbclubc_blog';
+	$config['dbname'] = 'lojanu28_bsb';
 	$config['host'] = 'localhost';
-	$config['dbuser'] = 'cbsbclubc_bucker';
-	$config['dbpass'] = 'Bm}YSYrkw_a{';
+	$config['dbuser'] = 'lojanu28_bucker';
+	// $config['dbpass'] = 'Bm}YSYrkw_a{';
+	$config['dbpass'] = 'ccsR60RfD6?E';
 }
 
 $db = new PDO("mysql:dbname=".$config['dbname'].";host=".$config['host'], $config['dbuser'], $config['dbpass']);

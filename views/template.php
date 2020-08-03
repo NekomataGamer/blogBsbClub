@@ -356,8 +356,8 @@
 		<script src="<?php echo BASE_URL;?>assets/blog/js/select2.js"></script>
 
 		<!-- Cookie js -->
-		<script src="<?php echo BASE_URL;?>assets/blog/plugins/cookie/jquery.ihavecookies.js"></script>
-		<script src="<?php echo BASE_URL;?>assets/blog/plugins/cookie/cookie.js"></script>
+		<!-- <script src="<?php echo BASE_URL;?>assets/blog/plugins/cookie/jquery.ihavecookies.js"></script> -->
+		<!-- <script src="<?php echo BASE_URL;?>assets/blog/plugins/cookie/cookie.js"></script> -->
 
 		<!-- sticky Js-->
 		<script src="<?php echo BASE_URL;?>assets/blog/js/sticky.js"></script>

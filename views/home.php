@@ -17,7 +17,7 @@
           </div>
         </div>
 
-          <video autoplay loop muted src="http://bsbclub.com.br/sistema/assets/images/thumbnails/video bsb.mp4"  style="margin-top:-300px;" id="video-background"></video>
+          <video autoplay loop muted src="<?php echo BASE_URL;?>assets/blog/images/thumbnails/Video_Header_Site_BSB_CLUB_1920x4351.mp4"  style="margin-top:-300px;" id="video-background"></video>
       </div>
 
       <div class="row" id="form-index" style="margin-top: -120px;">
@@ -160,7 +160,7 @@
 									<div class="cat-item text-center">
 										<a href="<?php echo BASE_URL."categories/index/".$item['id'];?>"></a>
 										<div class="cat-img">
-											<img src="<?php echo BASE_URL;?>assets/blog/categoriesIcons/<?php echo $item['icon'];?>.png" alt="img">
+											<img src="<?php echo BASE_URL;?>media/categories/<?php echo $item['icon'];?>" alt="img">
 										</div>
 										<div class="cat-desc">
 											<h5 class="mb-1"><?php echo $item['title']?></h5>
@@ -195,7 +195,7 @@
 						<div class="card mb-0">
 						
 							<div class="item-card7-imgs">
-								<a href="<?php echo BASE_URL."showcase/".$item['id'];?>" ></a>
+								<a href="<?php echo BASE_URL."showcase/index/".$item['id'];?>" ></a>
 								<img src="<?php echo BASE_URL."media/posts/".$item['images'][0]['urlf'];?>" alt="img" class="cover-image" width="185px" height="185px">
 							</div>
 							<div class="item-card7-overlaytext">
@@ -233,11 +233,6 @@
 					</div>
 					<?php endforeach;?>
 					
-					
-					
-					
-					
-					
 				</div>
 			</div>
 		</section>
@@ -245,7 +240,7 @@
 
         <!--post section-->
 		<section>
-			<div class="cover-image sptb bg-background-color" data-image-src="../../assets/images/banners/banner4.jpg">
+			<div class="cover-image sptb bg-background-color" data-image-src="<?php echo BASE_URL;?>assets/blog/images/banners/banner4.jpg">
 				<div class="content-text mb-0">
 					<div class="content-text mb-0">
 						<div class="container">
@@ -287,7 +282,7 @@
 							<div class="mb-lg-0 mb-4">
 								<div class="service-card text-center">
 									<div class="bg-white icon-bg  icon-service text-purple about">
-										<img src="../../assets/images/products/about/REGISTER (1).png" alt="img">
+										<img src="<?php echo BASE_URL;?>assets/blog/images/products/about/REGISTER (1).png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
 										<h4 class="font-weight-semibold mb-2">Registre-se</h4>
@@ -302,7 +297,7 @@
 							<div class="mb-lg-0 mb-4">
 								<div class="service-card text-center">
 									<div class="bg-white icon-bg  icon-service text-purple about">
-										<img src="../../assets/images/products/about/OPEN ACCOUNT.png" alt="img">
+										<img src="<?php echo BASE_URL;?>assets/blog/images/products/about/OPEN ACCOUNT.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
 										<h4 class="font-weight-semibold mb-2">Abra sua Conta</h4>
@@ -317,7 +312,7 @@
 							<div class="mb-sm-0 mb-4">
 								<div class="service-card text-center">
 									<div class="bg-white icon-bg  icon-service text-purple about">
-										<img src="../../assets/images/products/about/INVESTMENT.png" alt="img">
+										<img src="<?php echo BASE_URL;?>assets/blog/images/products/about/INVESTMENT.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
 										<h4 class="font-weight-semibold mb-2">Invista seu dinheiro</h4>
@@ -332,7 +327,7 @@
 							<div class="">
 								<div class="service-card text-center">
 									<div class="bg-white icon-bg  icon-service text-purple about">
-										<img src="../../assets/images/brand/PROFIT.png" alt="img">
+										<img src="<?php echo BASE_URL;?>assets/blog/images/brand/PROFIT.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
 										<h4 class="font-weight-semibold mb-2">Comece a lucrar</h4>
@@ -485,7 +480,7 @@
 					<div class="card">
 						<div class="item-card2-img">
 							<a href="https://www.tecmundo.com.br/ciencia/154833-boas-noticias-vacina-covid-19-chega-brasil-video.htm"></a>
-							<img src="http://bsbclub.com.br/assets/images/products/products/corona4.png" alt="img" class="cover-image" height="250px" width="200px">
+							<img src="<?php echo BASE_URL;?>assets/blog/images/products/products/corona4.png" alt="img" class="cover-image" height="250px" width="200px">
 						</div>
 						
 						<div class="card-body">
@@ -518,7 +513,7 @@
 					<div class="card">
 						<div class="item-card2-img">
 							<a href="https://www.sonoticiaboa.com.br/2020/07/25/terapia-comunitaria-medico-nordestino-romeiro-ajuda-5-milhoes/"></a>
-							<img src="../../assets/images/products/products/terapia.png" alt="img" class="cover-image"  height="250px" width="200px">
+							<img src="<?php echo BASE_URL;?>assets/blog/images/products/products/terapia.png" alt="img" class="cover-image"  height="250px" width="200px">
 						</div>
 					
 						<div class="card-body">
@@ -551,7 +546,7 @@
 					<div class="card">
 						<div class="item-card2-img">
 							<a href="https://www.sonoticiaboa.com.br/2020/07/26/homem-agarra-salva-menino-2-anos-caiu-4o-andar-video/"></a>
-							<img src="../../assets/images/products/products/menino2.png" alt="img" class="cover-image" height="250px" width="200px">
+							<img src="<?php echo BASE_URL;?>assets/blog/images/products/products/menino2.png" alt="img" class="cover-image" height="250px" width="200px">
 						</div>
 						
 						<div class="card-body">
