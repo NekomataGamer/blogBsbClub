@@ -109,7 +109,7 @@
                                             <td><a href="#" class="btn-link">#<?php echo $item['id'];?></a>
                                             </td>
                                             <td><?php echo $item['title'];?></td>
-                                            <td><?php echo $item['icon'];?></td>
+                                            <td><img src="<?php echo BASE_URL."media/categories/".$item['icon'];?>" width="30px"></td>
                                             <td>
                                                 <a href="<?php echo BASE_URL."admin/editCategory/".$item['id'];?>" class="btn btn-info">editar</a>
                                                 <a href="<?php echo BASE_URL."admin/deleteCategory/".$item['id'];?>" class="btn btn-danger">excluir</a>

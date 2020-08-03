@@ -29,13 +29,13 @@
                             <input type="text" class="form-control w-100" placeholder="Enter Title here" name="title" autofocus>
                         </div>
                     <?php endif;?>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="form-label">Upload do Icone da Categoria</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="example-file-input-custom">
                             <label class="custom-file-label">Upload Icone</label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary waves-effect waves-light">Inserir</button>

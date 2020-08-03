@@ -49,7 +49,7 @@
                                     $a = new Admin();
                                     
                                     $dadosCategory = $a->getDadosFromCategory($item['id_category']);
-                                    
+                                    $images = $a->getImagesByProductId($item['id']);
                                 ?>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab-11">
@@ -59,8 +59,8 @@
                                                 <div class="item-card9-img">
                                                     
                                                     <div class="item-card9-imgs">
-                                                        <a href="#"></a>
-                                                        <img src="<?php echo BASE_URL;?>assets/blog/imagesPosts/<?php echo 'bella-ella'?>.png" alt="img" class="cover-image" style="height: 210px;">
+                                                        <a href="<?php echo BASE_URL."showcase/index/".$item['id'];?>"></a>
+                                                        <img src="<?php echo BASE_URL."media/posts/".$images[0]['urlf'];?>" alt="img" class="cover-image" style="height: 210px;">
                                                     </div>
                                                     <div class="item-card9-icons">
                                                         <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
@@ -72,7 +72,7 @@
                                                             <div class="arrow-ribbon bg-primary"><?php echo $dadosCategory['title'];?></div>
                                                             <br>
                                                             
-                                                            <a href="#" class="text-dark"><h4 class="font-weight-semibold mt-1"><?php echo $item['title'];?> </h4></a>
+                                                            <a href="<?php echo BASE_URL."showcase/index/".$item['id'];?>" class="text-dark"><h4 class="font-weight-semibold mt-1"><?php echo $item['title'];?> </h4></a>
                                                             <br>
                                                             <p class="mb-0 leading-tight"><?php echo $item['description'];?></p>
                                                         </div>
