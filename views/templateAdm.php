@@ -49,10 +49,10 @@
 				<div class="app-header1 header py-1 d-flex">
 					<div class="container-fluid">
 						<div class="d-flex">
-							<a class="header-brand" href="index.html">
+							<a class="header-brand" href="<?php echo BASE_URL."admin";?>">
 								<img src="<?php echo BASE_URL;?>assets/blog/images/brand/Artboard-22.png" class="header-brand-img" alt="BSB logo">
 							</a>
-							<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
+							<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="<?php echo BASE_URL."admin";?>"></a>
 							<div class="header-navicon">
 								<a href="#" data-toggle="search" class="nav-link d-lg-none navsearch-icon">
 									<i class="fa fa-search"></i>
