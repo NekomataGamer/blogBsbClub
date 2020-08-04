@@ -31,6 +31,18 @@ class pagesController extends Controller {
 
     public function contact(){
         $dados = array();
+        $c = new Contacts();
+
+        if(isset($_POST['name']) && !empty($_POST['name'])){
+            $name = addslashes($_POST['name']);
+            $email = addslashes($_POST['email']);
+            $phone = addslashes($_POST['phone']);
+            $msg = addslashes($_POST['msg']);
+
+            if($c->insertContact($name, $email, $phone, $msg)){
+                $dados['msg'] = "Embreve retornaremos o seu contato, obrigado :D";
+            }
+        }
 
         $this->loadTemplate('contact', $dados);
     }

@@ -13,7 +13,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
 		<!-- Title -->
-		<title>Claylist– Clean & Modern Admin Dashboard Bootstrap 4 HTML Template</title>
+		<title>Administrativo BSB Club</title>
 		<link rel="stylesheet" href="<?php echo BASE_URL;?>assets/blog/fonts/fonts/font-awesome.min.css">
 
 		<!-- Font Family-->
@@ -50,7 +50,7 @@
 					<div class="container-fluid">
 						<div class="d-flex">
 							<a class="header-brand" href="index.html">
-								<img src="<?php echo BASE_URL;?>assets/blog/images/brand/logo.png" class="header-brand-img" alt="Claylist logo">
+								<img src="<?php echo BASE_URL;?>assets/blog/images/brand/Artboard-22.png" class="header-brand-img" alt="BSB logo">
 							</a>
 							<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
 							<div class="header-navicon">
@@ -312,6 +312,32 @@
 								</li>
 								<li>
 									<a href="<?php echo BASE_URL."admin/listCategories";?>" class="slide-item">Todas as Categorias</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Leads</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="<?php echo BASE_URL."admin/listLeads/";?>" class="slide-item">Novos Leads (adquirir Cartão)</a>
+								</li>
+
+								<li>
+									<a href="<?php echo BASE_URL."admin/listLeadsListen/";?>" class="slide-item">Leads Visualisados (adquirir Cartão)</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Contato</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="<?php echo BASE_URL."admin/contacts/";?>" class="slide-item">Novos Contatos</a>
+								</li>
+
+								<li>
+									<a href="<?php echo BASE_URL."admin/contactsRead/";?>" class="slide-item">Marcados Como Lido</a>
 								</li>
 							</ul>
 						</li>

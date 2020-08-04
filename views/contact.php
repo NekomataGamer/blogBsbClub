@@ -163,10 +163,10 @@
                                 <p>Horario de Funcionamento!</p>
                             </div>
                         </div>
-                        <div class="col-12" style="background-color: #B5D356">
+                        <div class="col-12">
                             <div class="support-service bg-warning br-2" style="background-color:" red="" !important;="">
                                 <i class="fa fa-envelope-o"></i>
-                                <h6>contatobsbclub@gmail.com</h6>
+                                <h6>contato@bsbclub.com</h6>
                                 <p>Envie um email!</p>
                             </div>
                         </div>
@@ -181,16 +181,21 @@
                             <div class="wrapper wrapper2">
                                 <div class="card mb-0">
                                     <div class="card-body">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="name1" placeholder="Seu Nome">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" id="email" placeholder="Endereço de Email">
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Mensagem"></textarea>
-                                        </div>
-                                        <a href="#" class="btn btn-primary">Enviar</a>
+                                        <form method="POST">
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="name" id="name" placeholder="Seu Nome">
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="email" class="form-control" name="email" placeholder="Endereço de Email">
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="phone" placeholder="Telefone">
+                                          </div>
+                                          <div class="form-group">
+                                              <textarea class="form-control" name="msg" rows="6" placeholder="Mensagem"></textarea>
+                                          </div>
+                                          <input type="submit" value="Enviar" class="btn btn-primary">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -200,3 +205,18 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+		<?php if(isset($msg) && !empty($msg)):?>
+			<script>
+				Swal.fire({
+					position: 'top-end',
+					icon: 'success',
+					title: 'Pronto :)',
+					html: '<?php echo $msg;?>',
+					showConfirmButton: false,
+					timer: 2500
+				})
+			</script>
+		<?php endif;?>

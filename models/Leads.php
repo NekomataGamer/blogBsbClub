@@ -26,4 +26,40 @@ class Leads extends Model {
         
         return true;
     }
+
+    public function getListLeads(){
+        $array = array();
+
+        $sql = "SELECT * FROM leads WHERE status = :status";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':status', 0);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function getListLeadsListen(){
+        $array = array();
+
+        $sql = "SELECT * FROM leads WHERE status = 1";
+        $sql = $this->db->query($sql);
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+        }
+        
+        return $array;
+    }
+
+    public function updateStatus($id, $status){
+        $sql = "UPDATE leads SET status = :status WHERE id = :id";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':status', $status);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+    }
 }

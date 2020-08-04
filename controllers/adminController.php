@@ -238,4 +238,109 @@ class adminController extends Controller {
             header("Location: ".BASE_URL."admin/login");
         }
     }
+
+    // Leads
+
+    public function listLeads(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $l = new Leads();
+            
+            $dados['listLeads'] = $l->getListLeads();
+
+            $this->loadTemplateAdm('listLeads', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function contactLead($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $a = new Admin();
+            $l = new Leads();
+            
+            $l->updateStatus($id, 1);
+
+            header("Location: ".BASE_URL."admin/listLeads/");
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function listLeadsListen(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $l = new Leads();
+            
+            $dados['listLeads'] = $l->getListLeadsListen();
+
+            $this->loadTemplateAdm('listLeadsListen', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function contacts(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Contacts();
+            
+            $dados['listContacts'] = $c->getNewContacts();
+
+            $this->loadTemplateAdm('contacts', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function contactView($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Contacts();
+            
+            $dados['contactData'] = $c->getDataFromContact($id);
+
+            $this->loadTemplateAdm('contactsView', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function readContact($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $a = new Admin();
+            $c = new Contacts();
+
+            if($c->readContact($id)){
+                $dados['msg'] = "Marcado como lido";
+            }
+            
+            header("Location: ".BASE_URL."admin/contactView/".$id);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function contactsRead(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Contacts();
+
+            $dados['listReadContacts'] = $c->getListReadContacts();
+
+            $this->loadTemplateAdm('contactsRead', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
 }

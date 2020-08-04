@@ -288,17 +288,20 @@
 								</ul>
 							</div>
 							<div class="col-lg-4 col-md-12">
-								<h6>Faça Parte</h6>
-								<hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" style="border-color: #B5D356 !important;">
-								<div class="clearfix"></div>
-								<div class="input-group w-70">
-									<input type="text" class="form-control br-tl-3  br-bl-3 " placeholder="Email">
-									<div class="input-group-append ">
-										<button type="button" class="btn btn-primary br-tr-3  br-br-3" style="background-color: #B5D356 !important;"> Enviar </button>
+								<form method="POST">
+									<h6>Faça Parte</h6>
+									<hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" style="border-color: #B5D356 !important;">
+									<div class="clearfix"></div>
+									<div class="input-group w-70">
+										<input type="text" class="form-control br-tl-3  br-bl-3 " name="lead_1" placeholder="Email">
+										<div class="input-group-append ">
+										<input type="submit" class="btn btn-primary br-tr-3  br-br-3" value="Adquirir" style="background-color: #B5D356 !important;" value="Enviar">
+											<!-- <button type="button" class="btn btn-primary br-tr-3  br-br-3" > Enviar </button> -->
+										</div>
 									</div>
-								</div>
+								</form>
 								
-								<hr class="deep-purple  text-primary accent-2 mb-2 mt-3 d-inline-block mx-auto" style="border-color: #B5D356 !important;">
+								<!-- <hr class="deep-purple  text-primary accent-2 mb-2 mt-3 d-inline-block mx-auto" style="border-color: #B5D356 !important;"> -->
 								
 								
 							</div>
