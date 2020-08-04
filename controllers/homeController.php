@@ -11,6 +11,15 @@ class homeController extends Controller {
         $dados = array();
 
         $a = new Admin();
+        $l = new Leads();
+
+        if(isset($_POST['lead_1']) && !empty($_POST['lead_1'])){
+            $lead = addslashes($_POST['lead_1']);
+            
+            if($l->addLeads($lead)){
+                $dados['msg'] = "success";
+            }
+        }
         
         $dados['listPostFeatured'] = $a->getFeaturedsPosts();
 

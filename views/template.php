@@ -55,7 +55,7 @@
 
 		<!--Loader-->
 		<div id="global-loader">
-			<img src="<?php echo BASE_URL;?>assets/blog/images/brand/Artboard-22.png" class="loader-img floating" alt="">
+			<img src="<?php echo "../assets/blog/images/brand/Artboard-22.png";?>" class="loader-img floating" alt="">
 		</div>
 
 	<!--Topbar-->
@@ -129,7 +129,7 @@
         
       <header id="topo-site" style="display: none;">
         <div>
-           <a href="<?php echo BASE_URL;?>"><img style="height: auto; width:200px; margin-left: 100px !important;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+           <a href="<?php echo BASE_URL;?>"><img style="height: auto; width:200px; margin-left: 100px !important;" src="<?php echo BASE_URL."assets/blog/images/brand/Artboard-22.png";?>" alt=""></a>
         </div>
       </header>
       <input type="checkbox" id="chk" >
@@ -168,10 +168,10 @@
 			<div class="horizontal-main bg-dark-transparent clearfix" style="background-color: #413e3f; height: 110px" id="menu-none">
 				<div class="horizontal-mainwrapper container clearfix">
 					<div class="desktoplogo" style="margin-top: -18px;">
-						<a href="<?php echo BASE_URL;?>"><img style="height: 110px; width:auto;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+						<a href="<?php echo BASE_URL;?>"><img style="height: 110px; width:auto;" src="<?php echo BASE_URL."assets/blog/images/brand/Artboard-22.png";?>" alt=""></a>
 					</div>
 					<div class="desktoplogo-1" style="margin-top: -25px;">
-						<a href="<?php echo BASE_URL;?>"><img style="height: ; width:200px;" src="http://bsbclub.com.br/assets/images/brand/Artboard%2021.png" alt=""></a>
+						<a href="<?php echo BASE_URL;?>"><img style="height: ; width:200px;" src="<?php echo BASE_URL."assets/blog/images/brand/Artboard-22.png";?>" alt=""></a>
 					</div>
 					<!--Nav-->
 					<nav class="horizontalMenu clearfix d-md-flex">
@@ -376,6 +376,11 @@
 
 		<!-- Custom Js-->
 		<script src="<?php echo BASE_URL;?>assets/blog/js/custom.js"></script>
+
+		<!-- SweetAlert 2 -->
+
+		<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+		
 
 	</body>
 </html>

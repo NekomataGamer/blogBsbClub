@@ -249,16 +249,16 @@
 								<p class="fs-16">Venha fazer parte você também</p>
 								<div class="row">
 									<div class="col-lg-8 mx-auto d-block">
-										<div class="mt-5">
-											<div class="input-group sub-input mt-1">
-												<input type="text" class="form-control input-lg " placeholder="Digite seu email">
-												<div class="input-group-append ">
-													<button type="button" class="btn btn-primary btn-lg br-tr-3  br-br-3">
-														Adquirir
-													</button>
+										<form method="POST">
+											<div class="mt-5">
+												<div class="input-group sub-input mt-1">
+													<input type="email" class="form-control input-lg" placeholder="Digite seu email" name="lead_1">
+													<div class="input-group-append ">
+														<input type="submit" class="btn btn-primary btn-lg br-tr-3  br-br-3" value="Adquirir">
+													</div>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -579,3 +579,18 @@
 			</div>
 		</section>
 		<!--/Locations-->
+
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+		<?php if(isset($msg) && !empty($msg)):?>
+			<script>
+				Swal.fire({
+					position: 'top-end',
+					icon: 'success',
+					title: 'Obrigado :)',
+					html: 'Entraremos em contato em breve com você!',
+					showConfirmButton: false,
+					timer: 2500
+				})
+			</script>
+		<?php endif;?>

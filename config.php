@@ -26,7 +26,6 @@ $db = new PDO("mysql:dbname=".$config['dbname'].";host=".$config['host'], $confi
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Falta fazer
-// upload de icones das categorias
 // Paginação de Posts e categorias
 
 
@@ -36,7 +35,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // typewrite das paginas
 // slider em todas as paginas
-// corrigir imagens gerais
+
 
 // sistema de newslatter
 // pagina de contato funcional
@@ -49,6 +48,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // editar/excluir categorias
 // upload de imagens para o slider
 // Corrigir editar nome do autor
+// corrigir imagens gerais
+// upload de icones das categorias
 
 //Campo de texto inserir e editar Post (atualização EDITOR DE TEXTO)
 ?>
