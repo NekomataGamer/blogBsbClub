@@ -588,7 +588,7 @@
 					position: 'top-end',
 					icon: 'success',
 					title: 'Obrigado :)',
-					html: 'Entraremos em contato em breve com você!',
+					html: 'Entraremos em contato em breve com você!!!!!!!!!!',
 					showConfirmButton: false,
 					timer: 2500
 				})
