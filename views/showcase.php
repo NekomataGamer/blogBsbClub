@@ -159,28 +159,31 @@
 						</div>
 					</div>
 					<div class="card-body p-0">
-						<div class="media mt-0 p-5">
-							<div class="d-flex mr-3">
-								<a href="#"><img src="<?php echo BASE_URL;?>assets/blog/images/faces/male/26.jpg" class="media-object brround" alt="50x50"> </a>
-							</div>
-							<div class="media-body">
-								<h5 class="mt-0 mb-1 font-weight-semibold">Sr. Weberth Martins dos Santos
-									<span class="fs-14 ml-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="verified"><i class="fa fa-check-circle-o text-success"></i></span>
-									<span class="fs-14 ml-2"> 4.5 <i class="fa fa-star text-yellow"></i></span>
-								</h5>
-								<small class="text-muted"><i class="fa fa-calendar"></i> 30 de Fev  <i class=" ml-3 fa fa-clock-o"></i> 13:30  <i class=" ml-3 fa fa-map-marker"></i> Brasil</small>
-								<p class="font-13  mb-2 mt-2">
-									“A instituição Excellence foi fundada com o objetivo de preparar as pessoas para trabalharem e se desenvolverem de forma efetiva no mercado de trabalho dessa forma visa atender as necessidades dos clientes e do mundo científico através de soluções acadêmicas desenvolvendo e desencadeando parcerias duradouras. Onde o ser humano são riquezas da vida. Respeito as pessoas, educação, conhecimento e convívio harmônico são crenças dogmáticas tal qual, estas são as diretrizes básicas, essenciais e existenciais da Excellence Serviços Educacionais.”
-								</p>
-								<a href="#" class="mr-2"><span class="badge badge-primary">Curtir</span></a>
-								<a href="" class="mr-2" data-toggle="modal" data-target="#Comment"><span>Comentar</span></a>
-								<a href="" class="mr-2" data-toggle="modal" data-target="#report"><span>Compartilhar</span></a>
-								<div class="media mt-5">
-									
-									
+						<?php foreach($comments as $item):?>
+							<div class="media mt-0 p-5">
+								<div class="d-flex mr-3">
+									<a href="#"><img src="<?php echo BASE_URL;?>assets/blog/images/faces/male/26.jpg" class="media-object brround" alt="50x50"> </a>
+								</div>
+								<div class="media-body">
+									<h5 class="mt-0 mb-1 font-weight-semibold"><?php echo $item['name'];?>
+										<span class="fs-14 ml-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="verified"><i class="fa fa-check-circle-o text-success"></i></span>
+										<span class="fs-14 ml-2"> 5 <i class="fa fa-star text-yellow"></i></span>
+									</h5>
+									<small class="text-muted"><i class="fa fa-calendar"></i> <?php echo date('d/m/Y', strtotime($item['date_comment']));?>  <i class=" ml-3 fa fa-clock-o"></i> <?php echo date('H:i', strtotime($item['date_comment']));?>  <i class=" ml-3 fa fa-map-marker"></i> Brasil</small>
+									<p class="font-13  mb-2 mt-2">
+										“<?php echo $item['comment'];?>”
+									</p>
+									<a href="#" class="mr-2"><span class="badge badge-primary">Curtir</span></a>
+									<!-- <a href="" class="mr-2" data-toggle="modal" data-target="#Comment"><span>Comentar</span></a> -->
+									<a href="" class="mr-2" data-toggle="modal" data-target="#report"><span>Compartilhar</span></a>
+									<div class="media mt-5">
+										
+										
+									</div>
 								</div>
 							</div>
-						</div>
+						<?php endforeach;?>
+						
 						
 					</div>
 				</div>
@@ -190,18 +193,20 @@
 						<h3 class="card-title">Deixe um Comentário</h3>
 					</div>
 					<div class="card-body">
-						<div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="name1" placeholder="Seu Nome">
+						<form method="POST">
+							<div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="name1" placeholder="Seu Nome">
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="email" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" name="msg" rows="6" placeholder="Comentário"></textarea>
+								</div>
+								<input type="submit" value="Enviar" class="btn btn-primary">
 							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Comentário"></textarea>
-							</div>
-							<a href="#" class="btn btn-primary">Enviar</a>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -472,3 +477,18 @@
 	</div>
 </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+		<?php if(isset($msg) && !empty($msg)):?>
+			<script>
+				Swal.fire({
+					position: 'top-end',
+					icon: 'success',
+					title: 'Pronto :)',
+					html: 'Seu comentário foi adicionado',
+					showConfirmButton: false,
+					timer: 3500
+				})
+			</script>
+		<?php endif;?>

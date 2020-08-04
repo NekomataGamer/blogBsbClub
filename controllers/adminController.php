@@ -343,4 +343,34 @@ class adminController extends Controller {
             header("Location: ".BASE_URL."admin/login");
         }
     }
+
+    public function comments(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Comments();
+
+            $dados['commentList'] = $c->getListOfComments();
+
+            $this->loadTemplateAdm('comments', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function editComment($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Comments();
+
+            $dados['commentData'] = $c->getCommentsFromPostId($id);
+
+            $this->loadTemplateAdm('editComment', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
 }

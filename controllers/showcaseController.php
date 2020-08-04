@@ -4,8 +4,20 @@ class showcaseController extends Controller {
         $dados = array();
 
         $a = new Admin();
+        $c = new Comments();
+
+        if(isset($_POST['name1']) && !empty($_POST['name1'])){
+            $name = addslashes($_POST['name1']);
+            $email = addslashes($_POST['email']);
+            $msg = addslashes($_POST['msg']);
+
+            if($c->insertComment($name, $email, $msg, $id)){
+                $dados['msg'] = "O Comentario Foi Adicionado!";
+            }
+        }
 
         $dados['dataPost'] = $a->getPostData($id);
+        $dados['comments'] = $c->getCommentsFromPostId($id);
         $dados['getCategory'] = $a->getDadosFromCategory($dados['dataPost']['id_category']);
         $dados['imagesPost'] = $a->getImagesByProductId($id);
 

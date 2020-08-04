@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Ago-2020 às 18:42
+-- Tempo de geração: 04-Ago-2020 às 21:50
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.8
 
@@ -72,10 +72,55 @@ INSERT INTO `categories` (`id`, `title`, `icon`, `status`) VALUES
 (14, 'Saúde', 'health.png', 1),
 (15, 'Beleza', 'beleza.png', 1),
 (16, 'Moda', 'sarafan.png', 1),
-(17, 'Decoração', 'living-room.png', 1),
-(35, 'testeeee999888', '56d18eafd49f496df02626a931bd9d7b.jpg', 1),
-(36, 'ferramentas', '7eb0257abc32e6f8d82a94044d326129.jpg', 1),
-(37, 'ferramentas', '1ee998e0ef94bef4daee97b5c683ca0e.png', 1);
+(17, 'Decoração', 'living-room.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `contact_form`
+--
+
+CREATE TABLE `contact_form` (
+  `id` int(11) NOT NULL,
+  `name` varchar(120) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `message` text NOT NULL DEFAULT '',
+  `date_contact` datetime DEFAULT current_timestamp(),
+  `status` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `contact_form`
+--
+
+INSERT INTO `contact_form` (`id`, `name`, `email`, `phone`, `message`, `date_contact`, `status`) VALUES
+(1, 'Alison Vitor Bucker', 'originalalison@gmail.com', '27996333526', 'Olá, é só um teste :P', '2020-08-04 13:44:32', 1),
+(2, 'Alison Vitor Bucker', 'originalalison@gmail.com', '27996333526', 'Olá, é só um teste :P', '2020-08-04 13:47:49', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `leads`
+--
+
+CREATE TABLE `leads` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `ip` varchar(50) NOT NULL,
+  `s_o` varchar(50) NOT NULL,
+  `cidade` varchar(50) DEFAULT NULL,
+  `date_ini` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `leads`
+--
+
+INSERT INTO `leads` (`id`, `email`, `ip`, `s_o`, `cidade`, `date_ini`, `status`) VALUES
+(12, 'originalalison@gmail.com', '::1', 'Windows', NULL, '2020-08-04 11:43:56', 1),
+(13, 'facaparte@gmail.com', '::1', 'Windows', NULL, '2020-08-04 14:41:04', 0);
 
 -- --------------------------------------------------------
 
@@ -113,6 +158,31 @@ INSERT INTO `posts` (`id`, `id_admin`, `id_category`, `author`, `description`, `
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `posts_comments`
+--
+
+CREATE TABLE `posts_comments` (
+  `id` int(11) NOT NULL,
+  `id_post` int(11) NOT NULL DEFAULT 0,
+  `name` varchar(150) NOT NULL DEFAULT '0',
+  `email` varchar(250) NOT NULL DEFAULT '0',
+  `comment` text NOT NULL DEFAULT '0',
+  `date_comment` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `posts_comments`
+--
+
+INSERT INTO `posts_comments` (`id`, `id_post`, `name`, `email`, `comment`, `date_comment`, `status`) VALUES
+(1, 43, 'Alison Vitor Bucker', 'originalalison@gmail.com', 'Empresa Bacana!', '2020-08-04 15:54:25', NULL),
+(2, 44, 'Alison Bucker', 'originalalison@gmail.com', 'Gostei da estrutura do hospicio', '2020-08-04 15:58:47', NULL),
+(3, 44, 'Alison Bucker', 'originalalison@gmail.com', 'Gostei da estrutura do hospicio', '2020-08-04 15:59:01', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `posts_images`
 --
 
@@ -132,7 +202,8 @@ INSERT INTO `posts_images` (`id`, `id_post`, `urlf`) VALUES
 (21, 45, '3d86c439bd432d82bf758d968cfd6360.jpg'),
 (22, 45, 'a5d8bc1c09f6d05bf2a248384d076b29.jpg'),
 (23, 45, 'c2bdc9ef1f17892ef9ed02627c2e281c.jpg'),
-(24, 34, '5fdac7e9e32aaf5e0287196faf04365b.jpg');
+(24, 34, '5fdac7e9e32aaf5e0287196faf04365b.jpg'),
+(25, 44, '13531ad6fb5cd542fa14e8fb0dda581b.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -151,9 +222,27 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `contact_form`
+--
+ALTER TABLE `contact_form`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `leads`
+--
+ALTER TABLE `leads`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `posts`
 --
 ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `posts_comments`
+--
+ALTER TABLE `posts_comments`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -179,16 +268,34 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
+-- AUTO_INCREMENT de tabela `contact_form`
+--
+ALTER TABLE `contact_form`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `leads`
+--
+ALTER TABLE `leads`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
+-- AUTO_INCREMENT de tabela `posts_comments`
+--
+ALTER TABLE `posts_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `posts_images`
 --
 ALTER TABLE `posts_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

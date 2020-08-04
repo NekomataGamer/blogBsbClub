@@ -341,6 +341,15 @@
 								</li>
 							</ul>
 						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Comentarios</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="<?php echo BASE_URL."admin/comments/";?>" class="slide-item">Todos os Comentarios</a>
+								</li>
+							</ul>
+						</li>
 						
 					</ul>
 					<div class="app-sidebar-footer">
