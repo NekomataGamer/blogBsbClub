@@ -63,9 +63,11 @@ class adminController extends Controller {
                 $phone = addslashes($_POST['phone']);
                 $map = addslashes($_POST['map']);
 
+                $discount = addslashes($_POST['discount']);
+
                 $images = (!empty($_FILES['images']))?$_FILES['images']:array();
 
-                $idPost = $a->insertPost($title, $category, $body, $description, $althor_name, $link, $featured, $email, $phone, $map, $images);
+                $idPost = $a->insertPost($title, $category, $body, $description, $althor_name, $link, $featured, $email, $phone, $map, $images, $discount);
                 if($idPost){
                     header('Location: '.BASE_URL."admin/editPost/".$idPost."/?status=success");
                 }
@@ -110,9 +112,11 @@ class adminController extends Controller {
                 $phone = addslashes($_POST['phone']);
                 $map = addslashes($_POST['map']);
 
+                $discount = addslashes($_POST['discount']);
+
                 $images = (!empty($_FILES['images']))?$_FILES['images']:array();
                 
-                if($a->editPost($title, $category, $body, $author, $link, $featured, $email, $phone, $map, $images, $id)){
+                if($a->editPost($title, $category, $body, $author, $link, $featured, $email, $phone, $map, $images, $discount, $id)){
                     $dados['msg'] = "Post Editado"; 
                 }
             }

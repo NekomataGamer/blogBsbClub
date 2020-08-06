@@ -45,6 +45,18 @@
                             <input type="text" class="form-control w-100"  placeholder="Enter Title here" name="description">
                         </div>
                     <?php endif;?>
+
+                    <?php if(isset($dataPost['discount'])):?>
+                        <div class="form-group ">
+                            <label class="form-label">Desconto</label>
+                            <input type="text" class="form-control w-100"  placeholder="Desconto" name="discount" value="<?php echo $dataPost['discount'];?>">
+                        </div>
+                    <?php else:?>
+                        <div class="form-group ">
+                            <label class="form-label">Desconto</label>
+                            <input type="text" class="form-control w-100"  placeholder="Desconto" name="discount">
+                        </div>
+                    <?php endif;?>
                     
                     <div class="form-group">
                         <label class="form-label">Categoria do Post</label>

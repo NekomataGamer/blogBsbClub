@@ -27,6 +27,11 @@
                         <label class="form-label">Descrição</label>
                         <input type="text" class="form-control w-100"  placeholder="Coloque a descrição do Anúncio aqui" name="description">
                     </div>
+
+                    <div class="form-group ">
+                        <label class="form-label">Desconto  %</label>
+                        <input type="text" class="form-control w-100"  placeholder="Desconto" name="discount">
+                    </div>
                     
                     <div class="form-group">
                         <label class="form-label">Selecionar Categoria</label>
