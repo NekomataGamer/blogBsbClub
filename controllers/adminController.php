@@ -260,14 +260,14 @@ class adminController extends Controller {
         }
     }
 
-    public function contactLead($id){
+    public function contactLead($id, $page){
         if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
             $a = new Admin();
             $l = new Leads();
             
             $l->updateStatus($id, 1);
 
-            header("Location: ".BASE_URL."admin/listLeads/");
+            header("Location: ".BASE_URL."admin/".$page);
         }else{
             header("Location: ".BASE_URL."admin/login");
         }
@@ -280,9 +280,39 @@ class adminController extends Controller {
             $a = new Admin();
             $l = new Leads();
             
-            $dados['listLeads'] = $l->getListLeadsListen();
+            $dados['listLeads'] = $l->getListLeadsListen(1);
 
             $this->loadTemplateAdm('listLeadsListen', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function listNewsLetterLeads(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $l = new Leads();
+            
+            $dados['listLeads'] = $l->getListNewsLetter();
+
+            $this->loadTemplateAdm('listNewsLetterLeads', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function listNewsLetterLeadsListen(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $l = new Leads();
+            
+            $dados['listLeads'] = $l->getListLeadsListen(2);
+
+            $this->loadTemplateAdm('listLeadsNewsLetterListen', $dados);
         }else{
             header("Location: ".BASE_URL."admin/login");
         }

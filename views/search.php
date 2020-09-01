@@ -1,7 +1,7 @@
 <section class="sptb">
     <div class="container">
         <div class="row">
-            <div class="col-xl-9 col-lg-8 col-md-12">
+            <div class="col-xl-12 col-lg-12 col-md-12">
                 <!--Add lists-->
                 <div class=" mb-lg-0">
                     <div class="">
@@ -9,7 +9,7 @@
                             <div class=" mb-0">
                                 <div class="">
                                     <div class="p-5 bg-white item2-gl-nav d-flex">
-                                        <h6 class="mb-0 mt-2">Exibindo <?php echo count($listPost);?> resultados</h6>
+                                        <h6 class="mb-0 mt-2">Exibindo <?php echo count($postByTherm);?> resultados</h6>
                                         <ul class="nav item2-gl-menu ml-auto">
                                             
                                         </ul>
@@ -33,7 +33,7 @@
                                 <div class="alert alert-info" style="margin: 50px 0px 50px 0px;"><?php echo $msg; ?></div>
                             <?php endif;?>
 
-                            <?php foreach($listPost as $item):?>
+                            <?php foreach($postByTherm as $item):?>
                                 <?php 
                                     $a = new Admin();
                                     
@@ -102,62 +102,13 @@
                             <?php endforeach;?>
                             
                         </div>
-                        <!-- <div class="center-block text-center">
-                            <ul class="pagination mb-5">
-                                <li class="page-item page-prev disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item page-next">
-                                    <a class="page-link" href="#">Proximo</a>
-                                </li>
-                            </ul>
-                        </div> -->
+                        
                     </div>
                 </div>
                 <!--/Add lists-->
             </div>
 
-            <!--Right Side Content-->
-            <div class="col-xl-3 col-lg-4 col-md-12">
-                <!-- <div class="card">
-                    <div class="card-body">
-                        <form method="POST">
-                            <div class="input-group">
-                                <input type="text" class="form-control br-tl-3 br-bl-3" placeholder="Pesquisar" name="searchCatPage">
-                                <div class="input-group-append ">
-                                   <input type="submit" class="btn btn-primary br-tr-3 br-br-3" value="Pesquisar">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Categorias</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="" id="container">
-                            <div class="filter-product-checkboxs">
-                            <?php foreach($categories as $item):
-                                    $a = new Admin();
-                                    $countCatById = $a->countCatById($item['id']);
-                                ?>
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <!-- <input type="checkbox" class="custom-control-input" name="checkbox1" value="option1"> -->
-                                    <span class="custom-control-label">
-                                        <a href="<?php echo BASE_URL.'categories/index/'.$item['id'];?>" class="text-dark"><?php echo $item['title'];?><span class="label label-secondary float-right"><?php echo $countCatById;?></span></a>
-                                    </span>
-                                </label>
-                            <?php endforeach;?> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/Right Side Content-->
+            
         </div>
     </div>
 </section>

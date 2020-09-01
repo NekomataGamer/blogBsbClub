@@ -326,6 +326,14 @@
 								<li>
 									<a href="<?php echo BASE_URL."admin/listLeadsListen/";?>" class="slide-item">Leads Visualisados (adquirir Cartão)</a>
 								</li>
+
+								<li>
+									<a href="<?php echo BASE_URL."admin/listNewsLetterLeads/";?>" class="slide-item">Leads Newsletter (Receba Novidades)</a>
+								</li>
+
+								<li>
+									<a href="<?php echo BASE_URL."admin/listNewsLetterLeadsListen/";?>" class="slide-item">Leads Newsletter Visualisados (Receba Novidades)</a>
+								</li>
 							</ul>
 						</li>
 

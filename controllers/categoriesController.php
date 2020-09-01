@@ -11,8 +11,24 @@ class categoriesController extends Controller {
         $dados = array();
 
         $a = new Admin();
+        $filter01 = '';
+        $searchCatPage = '';
+
+        if(isset($_POST['filter01']) && !empty($_POST['filter01'])){
+            $filter01 = addslashes($_POST['filter01']);
+            
+        }
+
+        if(isset($_POST['searchCatPage']) && !empty($_POST['searchCatPage'])){
+            $searchCatPage = addslashes($_POST['searchCatPage']);
+        }
 
         $dados['listPost'] = $a->listPost($id_category);
+        $dados['categories'] = $a->listCategories();
+
+        $dados['listPost'] = $a->listPostFiltred01($filter01, $id_category, $searchCatPage);
+
+        
         
         if(empty($dados['listPost'])){
             $dados['msg'] = "Ainda não existe nada nesta categoria";

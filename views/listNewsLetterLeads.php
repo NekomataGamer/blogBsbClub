@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h4 class="page-title">Lista de Leads (Adquira seu cartão)</h4>
+    <h4 class="page-title">Lista de Leads (Receba Novidades)</h4>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
         <li class="breadcrumb-item active" aria-current="page">Lista de Leads</li>
@@ -117,7 +117,7 @@
                                                 <?php endif;?>
                                             </td>
                                             <td>
-                                                <a href="<?php echo BASE_URL."admin/contactLead/".$item['id'].'/listLeads';?>" class="btn btn-info">Ok</a>
+                                                <a href="<?php echo BASE_URL."admin/contactLead/".$item['id'].'/listNewsLetterLeads';?>" class="btn btn-info">Ok</a>
                                                 <!-- <a href="<?php echo BASE_URL."admin/deleteLead/".$item['id'];?>" class="btn btn-danger">excluir</a> -->
                                             </td>
                                         </tr>

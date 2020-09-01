@@ -167,7 +167,19 @@ class Admin extends Model {
     }
 
     // CATEGORIES
+    public function countCatById($id){
+        $total = 0;
+        $sql = "SELECT * FROM posts WHERE id_category = :id_category";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_category', $id);
+        $sql->execute();
 
+        if($sql->rowCount() > 0){
+            $total = $sql->rowCount();
+        }
+
+        return $total;
+    }
     public function insertNewCat($title, $icon){
         $sql = "INSERT INTO categories SET title = :title";
         $sql = $this->db->prepare($sql);
@@ -236,5 +248,84 @@ class Admin extends Model {
         $sql->execute();
 
         return true;
+    }
+
+    // Filtros
+
+    public function listPostFiltred01($filter01, $id_category, $searchCatPage){
+        $array = array();
+
+        switch($filter01){
+            case 1:
+                if(isset($searchCatPage) && !empty($searchCatPage)){
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category AND title LIKE :title ORDER BY id DESC";
+                    break;
+                }else{
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category ORDER BY id DESC";
+                    break;
+                }
+                
+            case 2:
+                if(isset($searchCatPage) && !empty($searchCatPage)){
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category AND title LIKE :title ORDER BY id ASC";
+                    break;
+                }else{
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category ORDER BY id ASC";
+                    break;
+                }
+            case 3:
+                if(isset($searchCatPage) && !empty($searchCatPage)){
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category AND title LIKE :title ORDER BY discount ASC";
+                    break;
+                }else{
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category ORDER BY discount ASC";
+                    break;
+                }
+            case 4:
+                if(isset($searchCatPage) && !empty($searchCatPage)){
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category AND title LIKE :title ORDER BY discount DESC";
+                    break;
+                }else{
+                    $sql = "SELECT * FROM posts WHERE id_category = :id_category ORDER BY discount DESC";
+                    break;
+                }
+            default:
+            if(isset($searchCatPage) && !empty($searchCatPage)){
+                $sql = "SELECT * FROM posts WHERE id_category = :id_category AND title LIKE :title ORDER BY id DESC";
+            }else{
+                $sql = "SELECT * FROM posts WHERE id_category = :id_category ORDER BY id DESC";
+            }
+        }
+
+        $sql = $this->db->prepare($sql);
+        if(isset($searchCatPage) && !empty($searchCatPage)){
+            $sql->bindValue(':title', '%'.$searchCatPage.'%');
+        }
+        $sql->bindValue(':id_category', $id_category);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
+
+    public function search($keyword = '', $local = '', $category = ''){
+        $array = array();
+        
+        $sql = "SELECT * FROM posts WHERE title LIKE :title or localizacao = :localizacao or id_category = :id_category";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':title', '%'.$keyword.'%');
+        $sql->bindValue(':localizacao', $local);
+        $sql->bindValue(':id_category', $category);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+
     }
 }

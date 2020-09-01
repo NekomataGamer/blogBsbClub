@@ -47,7 +47,7 @@
 }
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-	color: #e4135aec296b;
+	color: #e4135a;
 	background-color: transparent
 }
 .btn-outline-primary:not(:disabled):not(.disabled).active,
@@ -63,7 +63,7 @@
 	box-shadow: 0 0 0 2px rgba(5, 117, 230, .1)
 }
 .btn-link {
-	color: #e4135aec296b
+	color: #e4135a;
 }
 .alert-primary {
 	color: #fcfdff;
@@ -884,7 +884,7 @@ form.convFormDynamic button.submit:hover {
 	background: linear-gradient(-225deg, rgba(72, 1, 255, .7) 0, rgba(121, 24, 242, .7) 48%, rgba(172, 50, 228, .7) 100%)
 }
 .bg-background-6:before {
-	background: linear-gradient(-225deg, rgba(72, 1, 255, .7) 0, rgba(121, 24, 242, .7) 48%, rgba(172, 50, 228, .7) 100%)
+	background: linear-gradient(-225deg, rgba(72, 1, 255, 1) 0, rgba(121, 24, 242, 1) 48%, rgba(172, 50, 228, 1) 100%)
 }
 .slider-header .item:before {
 	background: linear-gradient(-225deg, rgba(72, 1, 255, .7) 0, rgba(121, 24, 242, .7) 48%, rgba(172, 50, 228, .7) 100%)

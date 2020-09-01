@@ -1,4 +1,4 @@
-<section class="sptb" style="margin-top: 70px;">
+<section class="sptb" style="">
 	<div class="container">
 		<div class="row">
 			<div class="col-xl-8 col-lg-8 col-md-12">
@@ -12,7 +12,7 @@
 							<div class=" d-flex">
 								<ul class="d-flex mb-0">
 									<li class="mr-5"><a href="http://bsbclub.com.br/educacao.html#" class="icons"><i class="icon icon-briefcase text-muted mr-1"></i> <?php echo $getCategory['title'];?></a></li>
-									<li class="mr-5"><a href="" https:="" www.google.com="" maps="" embed?pb="!1m18!1m12!1m3!1d3737.0925154126085!2d-40.36224668452957!3d-20.502433361659904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb843d82bac922d%3A0xa8b96cf675c54738!2sLagoa%20Grande%20-%20Ponta%20da%20Fruta!5e0!3m2!1spt-BR!2sbr!4v1596024760207!5m2!1spt-BR!2sbr"> Vila Velha</a></li>
+									<li class="mr-5"><a href="" https:="" www.google.com="" maps="" embed?pb="!1m18!1m12!1m3!1d3737.0925154126085!2d-40.36224668452957!3d-20.502433361659904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb843d82bac922d%3A0xa8b96cf675c54738!2sLagoa%20Grande%20-%20Ponta%20da%20Fruta!5e0!3m2!1spt-BR!2sbr!4v1596024760207!5m2!1spt-BR!2sbr"> <?php echo $dataPost['localizacao'];?></a></li>
 									<li class="mr-5"><a href="#" class="icons"><i class="icon icon-calendar text-muted mr-1"></i> <?php echo date("d/m/Y", strtotime($dataPost['date_added']));?></a></li>
 									
 								</ul>

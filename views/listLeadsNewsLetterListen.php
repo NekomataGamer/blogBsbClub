@@ -1,8 +1,8 @@
 <div class="page-header">
-    <h4 class="page-title">Lista de Leads (Adquira seu cartão)</h4>
+    <h4 class="page-title">Lista de Leads Visualisados (Receba Novidades)</h4>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Lista de Leads</li>
+        <li class="breadcrumb-item active" aria-current="page">Lista de Leads Visualisados</li>
     </ol>
 </div>
 
@@ -95,7 +95,7 @@
                                         <th class="">Email</th>
                                         <th class="">Status</th>
                                         
-                                        <th>Ações</th>
+                                        <!-- <th>Ações</th> -->
                                     </tr>
 
                                     <?php foreach($listLeads as $item):?>
@@ -116,10 +116,10 @@
                                                     <div class="alert alert-info">Visualisado</div>
                                                 <?php endif;?>
                                             </td>
-                                            <td>
-                                                <a href="<?php echo BASE_URL."admin/contactLead/".$item['id'].'/listLeads';?>" class="btn btn-info">Ok</a>
+                                            <!-- <td> -->
+                                                <!-- <a href="<?php echo BASE_URL."admin/contactLead/".$item['id'];?>" class="btn btn-info">Ok</a> -->
                                                 <!-- <a href="<?php echo BASE_URL."admin/deleteLead/".$item['id'];?>" class="btn btn-danger">excluir</a> -->
-                                            </td>
+                                            <!-- </td> -->
                                         </tr>
                                     <?php endforeach;?>
                                 </tbody>
