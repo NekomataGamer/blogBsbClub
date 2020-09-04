@@ -212,18 +212,18 @@
                     <div class="card-body">
                         <div class="team-section text-center">
                             <div class="team-img">
-                                <img src="../../assets/images/faces/male/1.jpg" class="img-thumbnail rounded-circle alt=" alt="">
+                                <img src="<?php echo BASE_URL?>assets/blog/images/faces/team/breno.png" class="img-thumbnail rounded-circle alt=" alt="">
                             </div>
                             <h4 class="font-weight-bold dark-grey-text mt-4">Breno Rossoni</h4>
                             <h6 class="font-weight-bold blue-text ">Assist. Administrativo</h6>
                             <p class="font-weight-normal dark-grey-text">
-                            <i class="fa fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</p>
+                            <i class="fa fa-quote-left pr-2"></i>" É um orgulho e uma gratidão imensa poder fazer parte do BSB BANK, uma empresa que veio para revolucionar o mercado e trazer os melhores produtos e serviços para toda a população."</p>
                             <div class="text-warning">
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
-                                <i class="fa fa-star-half-full"> </i>
+                                <i class="fa fa-star"> </i>
                             </div>
                         </div>
                     </div>
@@ -234,12 +234,12 @@
                     <div class="card-body">
                         <div class="team-section text-center">
                             <div class="team-img">
-                                <img src="../../assets/images/faces/female/1.jpg" class="img-thumbnail rounded-circle alt=" alt="">
+                                <img src="<?php echo BASE_URL?>assets/blog/images/faces/team/carliane.png" class="img-thumbnail rounded-circle alt=" alt="">
                             </div>
                             <h4 class="font-weight-bold dark-grey-text mt-4">Carliani Alves</h4>
                             <h6 class="font-weight-bold blue-text ">Gerente Comercial</h6>
                             <p class="font-weight-normal dark-grey-text">
-                            <i class="fa fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam quis nostrum  corporis suscipit laboriosam, nisi ut aliquid commodi.</p>
+                            <i class="fa fa-quote-left pr-2"></i>"O BSB BANK veio para mudar e inovar não só minha vida como a de todos os seus clientes. O BSB foi feito para todos e isso me motiva, pois seus serviços e benefícios abrangem todas as classes sociais."</p>
                             <div class="text-warning">
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
@@ -256,18 +256,18 @@
                     <div class="card-body">
                         <div class="team-section text-center">
                             <div class="team-img">
-                                <img src="../../assets/images/faces/male/2.jpg" class="img-thumbnail rounded-circle alt=" alt="">
+                                <img  src="<?php echo BASE_URL?>assets/blog/images/faces/team/dionatan.png" class="img-responsive rounded-circle alt=" alt="">
                             </div>
                             <h4 class="font-weight-bold dark-grey-text mt-4">Dionatan Alves</h4>
                             <h6 class="font-weight-bold blue-text ">Supervisor Comercial</h6>
                             <p class="font-weight-normal dark-grey-text">
-                            <i class="fa fa-quote-left pr-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+                            <i class="fa fa-quote-left pr-2"></i>"Fazer parte da família BSB BANK me proporciona uma satisfação imensurável tanto na minha vida profissional quanto pessoal, pois o BSB é exatamente isso, feito não apenas para um tipo de pessoa, mas para todos!"</p>
                             <div class="text-warning">
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
                                 <i class="fa fa-star"> </i>
-                                <i class="fa fa-star-o"> </i>
+                                <i class="fa fa-star"> </i>
                             </div>
                         </div>
                     </div>
