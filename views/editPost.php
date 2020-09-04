@@ -137,6 +137,45 @@
                         </div>
                     <?php endif;?>
 
+                    <div class="form-group ">
+                        <label class="form-label">Localização</label>
+                        <?php echo (isset($dataPost['localizacao']))?'<input type="text" class="form-control w-100"  placeholder="Telefone do anunciante" name="local" value="'.$dataPost['localizacao'].'">':'';?>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Estado</label>
+                        <select id="estado" name="estado" class="form-control w-100">
+                            <option value="Acre" <?php echo ($dataPost['estado'] == 'Acre')?'selected':'';?>>Acre</option>
+                            <option value="Alagoas" <?php echo ($dataPost['estado'] == 'Alagoas')?'selected':'';?>>Alagoas</option>
+                            <option value="Amapá" <?php echo ($dataPost['estado'] == 'Amapá')?'selected':'';?>>Amapá</option>
+                            <option value="Amazonas" <?php echo ($dataPost['estado'] == 'Amazonas')?'selected':'';?>>Amazonas</option>
+                            <option value="Bahia" <?php echo ($dataPost['estado'] == 'Bahia')?'selected':'';?>>Bahia</option>
+                            <option value="Ceará" <?php echo ($dataPost['estado'] == 'Ceará')?'selected':'';?>>Ceará</option>
+                            <option value="Distrito Federal" <?php echo ($dataPost['estado'] == 'Distrito Federal')?'selected':'';?>>Distrito Federal</option>
+                            <option value="Espírito Santo"  <?php echo ($dataPost['estado'] == 'Espírito Santo')?'selected':'';?>>Espírito Santo</option>
+                            <option value="Goias" <?php echo ($dataPost['estado'] == 'Goias')?'selected':'';?>>Goiás</option>
+                            <option value="Maranhão" <?php echo ($dataPost['estado'] == 'Maranhão')?'selected':'';?>>Maranhão</option>
+                            <option value="Mato Grosso" <?php echo ($dataPost['estado'] == 'Mato Grosso')?'selected':'';?>>Mato Grosso</option>
+                            <option value="Mato grosso do Sul" <?php echo ($dataPost['estado'] == 'Mato grosso do Sul')?'selected':'';?>>Mato Grosso do Sul</option>
+                            <option value="Minas Gerais" <?php echo ($dataPost['estado'] == 'Minas Gerais')?'selected':'';?>>Minas Gerais</option>
+                            <option value="Pará" <?php echo ($dataPost['estado'] == 'Pará')?'selected':'';?>>Pará</option>
+                            <option value="Paraíba" <?php echo ($dataPost['estado'] == 'Paraíba')?'selected':'';?>>Paraíba</option>
+                            <option value="Paraná" <?php echo ($dataPost['estado'] == 'Paraná')?'selected':'';?>>Paraná</option>
+                            <option value="Pernambuco" <?php echo ($dataPost['estado'] == 'Pernambuco')?'selected':'';?>>Pernambuco</option>
+                            <option value="Piauí" <?php echo ($dataPost['estado'] == 'Piauí')?'selected':'';?>>Piauí</option>
+                            <option value="Rio de Janeiro" <?php echo ($dataPost['estado'] == 'Rio de Janeiro')?'selected':'';?>>Rio de Janeiro</option>
+                            <option value="Rio Grande do Norte" <?php echo ($dataPost['estado'] == 'Rio Grande do Norte')?'selected':'';?>>Rio Grande do Norte</option>
+                            <option value="Rio Grande do Sul" <?php echo ($dataPost['estado'] == 'Rio Grande do Sul')?'selected':'';?>>Rio Grande do Sul</option>
+                            <option value="Rondônia" <?php echo ($dataPost['estado'] == 'Rondônia')?'selected':'';?>>Rondônia</option>
+                            <option value="Roraima" <?php echo ($dataPost['estado'] == 'Roraima')?'selected':'';?>>Roraima</option>
+                            <option value="Santa Catarina" <?php echo ($dataPost['estado'] == 'Santa Catarina')?'selected':'';?>>Santa Catarina</option>
+                            <option value="São Paulo" <?php echo ($dataPost['estado'] == 'São Paulo')?'selected':'';?>>São Paulo</option>
+                            <option value="Sergipe" <?php echo ($dataPost['estado'] == 'Sergipe')?'selected':'';?>>Sergipe</option>
+                            <option value="Tocantins" <?php echo ($dataPost['estado'] == 'Tocantins')?'selected':'';?>>Tocantins</option>
+                            <option value="Ex" <?php echo ($dataPost['estado'] == 'Ex')?'selected':'';?>>Estrangeiro</option>
+                        </select>
+                    </div>
+
                     <?php if(isset($dataPost['map'])):?>
                         <div class="form-group ">
                             <label class="form-label">Mapa</label>

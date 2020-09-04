@@ -141,7 +141,7 @@
 							<li aria-haspopup="true"><a href="<?php echo BASE_URL."pages/about";?>" >Sobre </a></li>
 
 
-							<li aria-haspopup="true"><a href="<?php echo "#noticias";?>" >Notícias </a>
+							<li aria-haspopup="true"><a href="<?php echo  BASE_URL.'#noticias';?>" >Notícias </a>
 								
 							</li>
 							<li aria-haspopup="true"><a href="<?php echo BASE_URL."pages/categories";?>" >Categorias </a>
@@ -181,14 +181,16 @@
 												<input type="text" class="form-control input-lg br-md-0" id="text5" placeholder="Localização" name="local">
 												<span><i class="fa fa-map-marker location-gps mr-1"></i> </span>
 											</div>
-											<select class="form-control  input-lg br-md-0 col-xl-3" data-placeholder="Categoria" data-select2-id="1" tabindex="-1" aria-hidden="false" name="category">
-												<optgroup label="Categorias" data-select2-id="14">
-													<option data-select2-id="3">Selecione</option>
-													<?php foreach($viewData['listCategories'] as $item):?>
-														<option data-select2-id="" value="<?php echo $item['id'];?>"><?php echo $item['title'];?></option>
-													<?php endforeach;?>
-												</optgroup>
-											</select>
+											<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0 bg-white">
+												<select class="form-control input-lg br-tr-md-0 br-br-md-0" data-placeholder="Categoria" data-select2-id="1" tabindex="-1" aria-hidden="false" name="category">
+													<optgroup label="Categorias" data-select2-id="14">
+														<option data-select2-id="3" value="">Selecione</option>
+														<?php foreach($viewData['listCategories'] as $item):?>
+															<option data-select2-id="" value="<?php echo $item['id'];?>"><?php echo $item['title'];?></option>
+														<?php endforeach;?>
+													</optgroup>
+												</select>
+											</div>
 											<div class="col-xl-2 col-lg-3 col-md-12 mb-0">
 												<input type="submit" value="Pesquisar" class="btn btn-lg btn-block btn-primary br-tl-md-0 br-bl-md-0">
 											</div>
@@ -224,10 +226,10 @@
 						<h6>Nossos Serviços</h6>
 							<hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto" style="border-color: #B5D356 !important;">
 						<ul class="list-unstyled mb-0">
-							<li><a href="javascript:;" id="hoverConc">Nosso Time</a></li>
+							<li><a href="<?php echo BASE_URL;?>pages/aboutUs#nosso-time" id="hoverConc">Nosso Time</a></li>
 							
-							<li><a href="javascript:;" id="hoverConc">Sobre</a></li>
-							<li><a href="javascript:;" id="hoverConc">Serviços</a></li>
+							<li><a href="<?php echo BASE_URL;?>pages/aboutUs#sobre" id="hoverConc">Sobre</a></li>
+							<li><a href="<?php echo BASE_URL;?>pages/aboutUs#nossos-servicos" id="hoverConc">Serviços</a></li>
 							
 							
 						</ul>

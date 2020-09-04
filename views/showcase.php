@@ -11,8 +11,8 @@
 							<a href="#" class="text-dark"><h3><?php echo $dataPost['title'];?></h3></a>
 							<div class=" d-flex">
 								<ul class="d-flex mb-0">
-									<li class="mr-5"><a href="http://bsbclub.com.br/educacao.html#" class="icons"><i class="icon icon-briefcase text-muted mr-1"></i> <?php echo $getCategory['title'];?></a></li>
-									<li class="mr-5"><a href="" https:="" www.google.com="" maps="" embed?pb="!1m18!1m12!1m3!1d3737.0925154126085!2d-40.36224668452957!3d-20.502433361659904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb843d82bac922d%3A0xa8b96cf675c54738!2sLagoa%20Grande%20-%20Ponta%20da%20Fruta!5e0!3m2!1spt-BR!2sbr!4v1596024760207!5m2!1spt-BR!2sbr"> <?php echo $dataPost['localizacao'];?></a></li>
+									<li class="mr-5"><a href="<?php echo BASE_URL.'categories/index/'.$getCategory['id'];?>" class="icons"><i class="icon icon-briefcase text-muted mr-1"></i> <?php echo $getCategory['title'];?></a></li>
+									<li class="mr-5"><a href="" https:="" www.google.com="" maps="" embed?pb="!1m18!1m12!1m3!1d3737.0925154126085!2d-40.36224668452957!3d-20.502433361659904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb843d82bac922d%3A0xa8b96cf675c54738!2sLagoa%20Grande%20-%20Ponta%20da%20Fruta!5e0!3m2!1spt-BR!2sbr!4v1596024760207!5m2!1spt-BR!2sbr"> <i class="icon icon-location-pin text-muted mr-1"></i><?php echo $dataPost['localizacao'].' - '.$dataPost['estado'];?></a></li>
 									<li class="mr-5"><a href="#" class="icons"><i class="icon icon-calendar text-muted mr-1"></i> <?php echo date("d/m/Y", strtotime($dataPost['date_added']));?></a></li>
 									
 								</ul>
@@ -99,9 +99,9 @@
 					</div>
 					<div class="card-footer">
 						<div class="icons">
-							<a href="#" class="btn btn-info icons"><i class="icon icon-share mr-1"></i> Compartilhar</a>
+							<!-- <a href="#" class="btn btn-info icons"><i class="icon icon-share mr-1"></i> Compartilhar</a>
 							<a href="#" class="btn btn-primary icons"><i class="icon icon-heart  mr-1"></i> 235</a>
-							<a href="#" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Imprimir</a>
+							<a href="#" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Imprimir</a> -->
 						</div>
 					</div>
 				</div>
@@ -109,7 +109,7 @@
 
 				<!--Comments-->
 				<div class="card">
-					<div class="card-header">
+					<!-- <div class="card-header">
 						<h3 class="card-title">Avaliações</h3>
 					</div>
 					<div class="card-body">
@@ -157,7 +157,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="card-body p-0">
 						<?php foreach($comments as $item):?>
 							<div class="media mt-0 p-5">
@@ -219,13 +219,12 @@
 					</div>
 					<div class="card-body  item-user">
 						<div class="profile-pic mb-0">
-							<img src="<?php echo BASE_URL;?>assets/blog/images/faces/male/man-004.png" class="brround avatar-xxl" alt="user">
+							<!-- <img src="<?php echo BASE_URL;?>assets/blog/images/faces/male/man-004.png" class="brround avatar-xxl" alt="user"> -->
 							<div>
 								<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold"><?php echo $dataPost['author'];?></h4></a>
 								<span class="text-muted"></span>
 								<!-- <h6 class="mt-2 mb-0"><a href="#" class="btn btn-primary btn-sm">Ver todos os anúncios</a></h6> -->
 							</div>
-
 						</div>
 					</div>
 					<div class="card-body item-user">
@@ -247,7 +246,7 @@
 					<div class="card-footer">
 						<div class="text-left">
 							<a href="tel:<?php echo $dataPost['telefone'];?>" class="btn  btn-info"><i class="fa fa-phone"></i> Ligar</a>
-							<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#contact"><i class="fa fa-user"></i> Fale Conosco</a>
+							<!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#contact"><i class="fa fa-user"></i> Fale Conosco</a> -->
 						</div>
 					</div>
 				</div>

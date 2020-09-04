@@ -71,24 +71,7 @@
                                                             Por: <?php echo $item['author'];?>
                                                             <div class="ml-auto">
                                                                 <div class="rating-stars block">
-                                                                    <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                                                                    <div class="rating-stars-container">
-                                                                        <div class="rating-star sm is--active">
-                                                                            <i class="fa fa-star"></i>
-                                                                        </div>
-                                                                        <div class="rating-star sm is--active">
-                                                                            <i class="fa fa-star"></i>
-                                                                        </div>
-                                                                        <div class="rating-star sm is--active">
-                                                                            <i class="fa fa-star"></i>
-                                                                        </div>
-                                                                        <div class="rating-star sm">
-                                                                            <i class="fa fa-star"></i>
-                                                                        </div>
-                                                                        <div class="rating-star sm">
-                                                                            <i class="fa fa-star"></i>
-                                                                        </div>
-                                                                    </div>
+                                                                    <i class="icon icon-location-pin text-muted mr-1"></i><?php echo $item['localizacao'].' - '. $item['estado'];?>
                                                                 </div>
                                                             </div>
                                                         </div>

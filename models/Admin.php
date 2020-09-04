@@ -22,8 +22,8 @@ class Admin extends Model {
 
     // POSTS
 
-    public function insertPost($title, $category, $body, $description, $althor, $link, $featured, $email, $phone, $map, $images, $discount){
-        $sql = "INSERT INTO posts SET id_admin = :id_admin, id_category = :id_category, title = :title, body = :body, author = :author_name, description = :description, featured = :featured, email = :email, telefone = :telefone, map = :map, link = :link, discount = :discount";
+    public function insertPost($title, $category, $body, $description, $althor, $link, $featured, $email, $phone, $map, $localizacao, $estado, $images, $discount){
+        $sql = "INSERT INTO posts SET id_admin = :id_admin, id_category = :id_category, title = :title, body = :body, author = :author_name, description = :description, featured = :featured, email = :email, telefone = :telefone, map = :map, localizacao = :localizacao, estado = :estado, link = :link, discount = :discount";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id_admin', $_SESSION['login_adm_bsb']);
         $sql->bindValue(':id_category', $category);
@@ -35,6 +35,8 @@ class Admin extends Model {
         $sql->bindValue(':email', $email);
         $sql->bindValue(':telefone', $phone);
         $sql->bindValue(':map', $map);
+        $sql->bindValue(':localizacao', $localizacao);
+        $sql->bindValue(':estado', $estado);
         $sql->bindValue(':link', $link);
         $sql->bindValue(':discount', $discount);
         $sql->execute();
@@ -134,12 +136,13 @@ class Admin extends Model {
     }
 
     
-    public function editPost($title, $category, $body, $author, $link, $featured, $email, $phone, $map, $images, $discount, $id){
+    public function editPost($title, $description, $category, $body, $author, $link, $featured, $email, $phone, $map, $localizacao, $estado, $images, $discount, $id){
         $u = new Uploader();
 
-        $sql = "UPDATE posts SET title = :title, id_category = :category, body = :body, author = :author, link = :link, featured = :featured, email = :email, telefone =:phone, map = :map, discount = :discount WHERE id = :id";
+        $sql = "UPDATE posts SET title = :title, description = :description, id_category = :category, body = :body, author = :author, link = :link, featured = :featured, email = :email, telefone =:phone, map = :map, localizacao = :localizacao, estado = :estado, discount = :discount WHERE id = :id";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':title', $title);
+        $sql->bindValue(':description', $description);
         $sql->bindValue(':category', $category);
         $sql->bindValue(':body', $body);
         $sql->bindValue(':author', $author);
@@ -148,6 +151,8 @@ class Admin extends Model {
         $sql->bindValue(':email', $email);
         $sql->bindValue(':phone', $phone);
         $sql->bindValue(':map', $map);
+        $sql->bindValue(':localizacao', $localizacao);
+        $sql->bindValue(':estado', $estado);
         $sql->bindValue(':discount', $discount);
         $sql->bindValue(':id', $id);
         $sql->execute();
@@ -197,7 +202,7 @@ class Admin extends Model {
 
     public function listCategories(){
         $array = array();
-        $sql = "SELECT * FROM categories";
+        $sql = "SELECT * FROM categories ORDER BY title";
         $sql = $this->db->query($sql);
         
         if($sql->rowCount() > 0){
@@ -313,14 +318,78 @@ class Admin extends Model {
 
     public function search($keyword = '', $local = '', $category = ''){
         $array = array();
-        
-        $sql = "SELECT * FROM posts WHERE title LIKE :title or localizacao = :localizacao or id_category = :id_category";
-        $sql = $this->db->prepare($sql);
-        $sql->bindValue(':title', '%'.$keyword.'%');
-        $sql->bindValue(':localizacao', $local);
-        $sql->bindValue(':id_category', $category);
-        $sql->execute();
 
+        if(isset($keyword) && !empty($keyword) && isset($local) && !empty($local) && empty($category)){
+            $sql = "SELECT * FROM posts WHERE title LIKE :title AND localizacao LIKE :localizacao or estado LIKE :localizacao";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':title', '%'.$keyword.'%');
+            $sql->bindValue(':localizacao', '%'.$local.'%');
+            $sql->execute();
+            
+        }
+
+        // if(isset($local) && !empty($local) && isset($category) && !empty($category)){
+        //     $sql = "SELECT * FROM posts WHERE localizacao LIKE :localizacao AND id_category = :id_category";
+        //     $sql = $this->db->prepare($sql);
+        //     $sql->bindValue(':localizacao', '%'.$local.'%');
+        //     $sql->bindValue(':id_category', $category);
+        //     $sql->execute();
+        //     print_r($sql);exit;
+        //     // print_r($sql->fetchAll());exit;
+        // }
+
+        if(isset($keyword) && !empty($keyword) && isset($local) && !empty($local) && isset($category) && !empty($category)){
+            $sql = "SELECT * FROM posts WHERE title LIKE :title or description LIKE :title AND localizacao LIKE :localizacao or estado LIKE :localizacao AND id_category = :id_category";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':title', '%'.$keyword.'%');
+            $sql->bindValue(':localizacao', '%'.$local.'%');
+            $sql->bindValue(':id_category', $category);
+            $sql->execute();
+            
+        }
+
+        if(isset($keyword) && !empty($keyword) && isset($category) && !empty($category) && empty($local)){
+            $sql = "SELECT * FROM posts WHERE title LIKE :title or description LIKE :title AND id_category = :id_category";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':title', '%'.$keyword.'%');
+            $sql->bindValue(':id_category', $category);
+            $sql->execute();
+            
+        }
+
+        if(isset($local) && !empty($local) && isset($category) && !empty($category)){
+            $sql = "SELECT * FROM posts WHERE localizacao LIKE :local AND id_category = :id_category";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':local', '%'.$local.'%');
+            $sql->bindValue(':id_category', $category);
+            $sql->execute();
+            
+        }
+
+        if(isset($keyword) && !empty($keyword)){
+            $sql = "SELECT * FROM posts WHERE title LIKE :title or description LIKE :title";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':title', '%'.$keyword.'%');
+            $sql->execute();
+            
+        }
+
+        if(isset($local) && !empty($local)){
+            $sql = "SELECT * FROM posts WHERE localizacao LIKE :localizacao or estado LIKE :localizacao";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':localizacao', '%'.$local.'%');
+            $sql->execute();
+            
+        }
+
+        if(isset($category) && !empty($category) && empty($local)){
+            $sql = "SELECT * FROM posts WHERE id_category = :id_category";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(':id_category', $category);
+            $sql->execute();
+            
+        }
+        
         if($sql->rowCount() > 0){
             $array = $sql->fetchAll();
         }

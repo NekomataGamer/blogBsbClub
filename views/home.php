@@ -1,3 +1,24 @@
+<style>
+	#how-func{
+		color: #fff; 
+		background-image: url('<?php echo BASE_URL.'assets/blog/images/banners/banner-como-funciona.png';?>'); 
+		background-size: cover;
+    	background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+	}
+
+	@media (max-width: 500px){
+		#how-func{
+			color: #fff; 
+			background-position: 33%;
+		}
+
+		.mar-bt{
+			margin-bottom: 1rem;
+		}
+	}
+</style>
 <!--Categories-->
 <section class="sptb">
 	<div class="container">
@@ -123,29 +144,29 @@
 	</div>
 </section>
 
-<section class="sptb" style="background-color: #94b9e2;">
+<section class="sptb" id="how-func" style=" "> <!-- style="background-color: #94b9e2;" -->
 	<div class="container">
 		<div class="section-title center-block text-center">
 			<h2>Como Funciona?</h2>
 			<p>Veja como é simples</p>
 		</div>
 		<div class="row">
-			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="col-lg-3 col-md-6 col-sm-6 mar-bt">
 				<div class="">
 					<div class="mb-lg-0 mb-4">
 						<div class="service-card text-center">
 							<div class="bg-white icon-bg  icon-service text-purple about">
 								<img src="http://bsbclub.com.br/assets/blog/images/products/about/REGISTER (1).png" alt="img">
 							</div>
-							<div class="servic-data mt-3">
+							<div class="servic-data mt-3" >
 								<h4 class="font-weight-semibold mb-2">Registre-se</h4>
-								<p class="text-muted mb-0">Preencha o formulario para entrarmos em contato.</p>
+								<p class="text-muted mb-0" style="color: #fff !important;">Preencha o formulario para entrarmos em contato.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="col-lg-3 col-md-6 col-sm-6 mar-bt">
 				<div class="">
 					<div class="mb-lg-0 mb-4">
 						<div class="service-card text-center">
@@ -154,13 +175,13 @@
 							</div>
 							<div class="servic-data mt-3">
 								<h4 class="font-weight-semibold mb-2">Abra sua Conta</h4>
-								<p class="text-muted mb-0">Ajudaremos você a abrir a conta</p>
+								<p class="text-muted mb-0" style="color: #fff !important;">Ajudaremos você a abrir a conta</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="col-lg-3 col-md-6 col-sm-6 mar-bt">
 				<div class="">
 					<div class="mb-sm-0 mb-4">
 						<div class="service-card text-center">
@@ -169,13 +190,13 @@
 							</div>
 							<div class="servic-data mt-3">
 								<h4 class="font-weight-semibold mb-2">Invista seu dinheiro</h4>
-								<p class="text-muted mb-0">Aplique seu dinheiro que começará a render.</p>
+								<p class="text-muted mb-0" style="color: #fff  !important;">Aplique seu dinheiro que começará a render.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="col-lg-3 col-md-6 col-sm-6 mar-bt">
 				<div class="">
 					<div class="">
 						<div class="service-card text-center">
@@ -184,7 +205,7 @@
 							</div>
 							<div class="servic-data mt-3">
 								<h4 class="font-weight-semibold mb-2">Comece a lucrar</h4>
-								<p class="text-muted mb-0">Comece a lucrar e usufruir dos nossos beneficios</p>
+								<p class="text-muted mb-0" style="color: #fff !important;">Comece a lucrar e usufruir dos nossos beneficios</p>
 							</div>
 						</div>
 					</div>
@@ -349,7 +370,7 @@
 </section>
 <!--/Testimonials-->
 
-<section class="sptb" style="background-color: #94b9e2;">
+<section class="sptb" > <!-- style="background-color: #94b9e2;" -->
 	<div class="container">
 		<div class="section-title center-block text-center">
 			<h2 id="noticias">Ultimas Notícias</h2>
