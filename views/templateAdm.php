@@ -293,7 +293,7 @@
                     </li>
                     
 						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Posts</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-rss"></i><span class="side-menu__label">Posts</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li>
 									<a href="<?php echo BASE_URL."admin/insertPost/";?>" class="slide-item">Adicionar Post</a>
@@ -305,7 +305,7 @@
                         </li>
                         
                         <li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Categorias</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-list-ol"></i><span class="side-menu__label">Categorias</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li>
 									<a href="<?php echo BASE_URL."admin/insertCategory/";?>" class="slide-item">Adicionar Categoria</a>
@@ -317,7 +317,7 @@
 						</li>
 
 						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Leads</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user-plus"></i><span class="side-menu__label">Leads</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li>
 									<a href="<?php echo BASE_URL."admin/listLeads/";?>" class="slide-item">Novos Leads (adquirir Cartão)</a>
@@ -338,7 +338,7 @@
 						</li>
 
 						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Contato</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-phone"></i><span class="side-menu__label">Contato</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li>
 									<a href="<?php echo BASE_URL."admin/contacts/";?>" class="slide-item">Novos Contatos</a>
@@ -351,10 +351,34 @@
 						</li>
 
 						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">Comentarios</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-comments"></i><span class="side-menu__label">Comentarios</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li>
 									<a href="<?php echo BASE_URL."admin/comments/";?>" class="slide-item">Todos os Comentarios</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-users"></i><span class="side-menu__label">Clientes</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="<?php echo BASE_URL."admin/addClient/";?>" class="slide-item">Adicionar Cliente</a>
+								</li>
+								<li>
+									<a href="<?php echo BASE_URL."admin/clients/";?>" class="slide-item">Todos os Clientes</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-heartbeat"></i><span class="side-menu__label">Clinicas</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="<?php echo BASE_URL."admin/addClinica/";?>" class="slide-item">Adicionar Clinica</a>
+								</li>
+								<li>
+									<a href="<?php echo BASE_URL."admin/clinicas/";?>" class="slide-item">Todas as Clinicas</a>
 								</li>
 							</ul>
 						</li>

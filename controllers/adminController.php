@@ -413,4 +413,232 @@ class adminController extends Controller {
             header("Location: ".BASE_URL."admin/login");
         }
     }
+
+    // ----------------------------------------------------------------------------------------------------------------------------
+    // Area de consultas
+
+    public function addClient(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clientes();
+
+            if(isset($_POST['nome']) && !empty($_POST['nome'])){
+                $nome = addslashes($_POST['nome']);
+                $cpf = addslashes($_POST['cpf']);
+                $rg = addslashes($_POST['rg']);
+                $nome_mae = addslashes($_POST['nome_mae']);
+                $cep = addslashes($_POST['cep']);
+                $rua = addslashes($_POST['rua']);
+                $numero = addslashes($_POST['numero']);
+                $complemento = addslashes($_POST['complemento']);
+                $bairro = addslashes($_POST['bairro']);
+                $cidade = addslashes($_POST['cidade']);
+                $estado = addslashes($_POST['estado']);
+                $telefone = addslashes($_POST['telefone']);
+                $email = addslashes($_POST['email']);
+                $senha = $_POST['senha'];
+
+                if($c->add($nome, $cpf, $rg, $nome_mae, $cep, $rua, $numero, $bairro, $complemento, $cidade, $estado, $telefone, $email, $senha)){
+                    $dados['info'] = array(
+                        'type'=>'success',
+                        'msg'=>'Usuario Cadastrado com sucesso'
+                    );
+                }else{
+                    $dados['info'] = array(
+                        'type'=>'error',
+                        'msg'=>'Alguns dados deste usuario já foi cadastrado. Favor revisa-los (Email ou CPF)'
+                    );
+                }
+            }
+
+            $this->loadTemplateAdm('addCliente', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function clients(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clientes();
+
+            $dados['clientList'] = $c->getClientList();
+
+            $this->loadTemplateAdm('clientsList', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function editCliente($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clientes();
+
+            if(isset($_POST['nome']) && !empty($_POST['nome'])){
+                $nome = addslashes($_POST['nome']);
+                $cpf = addslashes($_POST['cpf']);
+                $rg = addslashes($_POST['rg']);
+                $nome_mae = addslashes($_POST['nome_mae']);
+                $cep = addslashes($_POST['cep']);
+                $rua = addslashes($_POST['rua']);
+                $numero = addslashes($_POST['numero']);
+                $complemento = addslashes($_POST['complemento']);
+                $bairro = addslashes($_POST['bairro']);
+                $cidade = addslashes($_POST['cidade']);
+                $estado = addslashes($_POST['estado']);
+                $telefone = addslashes($_POST['telefone']);
+                $email = addslashes($_POST['email']);
+
+                if($c->edit($nome, $cpf, $rg, $nome_mae, $cep, $rua, $numero, $bairro, $complemento, $cidade, $estado, $telefone, $email, '', $id)){
+                    $dados['info'] = array(
+                        'type'=>'success',
+                        'msg'=>'Cliente Editado'
+                    );
+                }else{
+                    $dados['info'] = array(
+                        'type'=>'error',
+                        'msg'=>'Alguns dados deste usuario já foi cadastrado. Favor revisa-los (Email ou CPF)'
+                    );
+                }
+            }
+
+            $dados['clientData'] = $c->getClientData($id);
+
+            $this->loadTemplateAdm('editCliente', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function deleteCliente($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $c = new Clientes();
+
+            $c->delete($id);
+            header('location: '.BASE_URL.'admin/clients?s=success');
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function addClinica(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clinicas();
+
+            if(isset($_POST['raz_soc']) && !empty($_POST['raz_soc'])){
+                $raz_soc = addslashes($_POST['raz_soc']);
+                $nome_fant = addslashes($_POST['nome_fantasia']);
+                $cnpj = addslashes($_POST['cnpj']);
+                $nome_resp = addslashes($_POST['nome_resp']);
+                $cpf_resp = addslashes($_POST['cpf_resp']);
+                $cep = addslashes($_POST['cep']);
+                $rua = addslashes($_POST['rua']);
+                $numero = addslashes($_POST['numero']);
+                $bairro = addslashes($_POST['bairro']);
+                $complemento = '';
+                $cidade = addslashes($_POST['cidade']);
+                $estado = addslashes($_POST['estado']);
+                $telefone = addslashes($_POST['telefone']);
+                $email = addslashes($_POST['email']);
+                $senha = $_POST['senha'];
+
+                if($c->add($raz_soc, $nome_fant, $cnpj, $nome_resp, $cpf_resp, $cep, $rua, $numero, $bairro, $complemento, $cidade, $estado, $telefone, $email, $senha)){
+                    $dados['info'] = array(
+                        'type'=>'success',
+                        'msg'=>'Clinica Cadastrada'
+                    );
+                }else{
+                    $dados['info'] = array(
+                        'type'=>'error',
+                        'msg'=>'Alguns dados desta clinica já foi cadastrado. Favor revisa-los (Email ou CNPJ)'
+                    );
+                }
+            }
+
+            $this->loadTemplateAdm('addClinica', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function clinicas(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clinicas();
+
+            $dados['clinicasList'] = $c->getClinicasList();
+
+            $this->loadTemplateAdm('clinicasList', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function editClinica($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clinicas();
+
+            
+
+            if(isset($_POST['raz_soc']) && !empty($_POST['raz_soc'])){
+                $raz_soc = addslashes($_POST['raz_soc']);
+                $nome_fant = addslashes($_POST['nome_fantasia']);
+                $cnpj = addslashes($_POST['cnpj']);
+                $nome_resp = addslashes($_POST['nome_resp']);
+                $cpf_resp = addslashes($_POST['cpf_resp']);
+                $cep = addslashes($_POST['cep']);
+                $rua = addslashes($_POST['rua']);
+                $numero = addslashes($_POST['numero']);
+                $bairro = addslashes($_POST['bairro']);
+                $cidade = addslashes($_POST['cidade']);
+                $estado = addslashes($_POST['estado']);
+                $telefone = addslashes($_POST['telefone']);
+                $email = addslashes($_POST['email']);
+
+                if($c->edit($raz_soc, $nome_fant, $cnpj, $nome_resp, $cpf_resp, $cep, $rua, $numero, $bairro, $cidade, $estado, $telefone, $email, $id)){
+                    $dados['info'] = array(
+                        'type'=>'success',
+                        'msg'=>'Clinica Editada'
+                    );
+                }else{
+                    $dados['info'] = array(
+                        'type'=>'error',
+                        'msg'=>'Este CNPJ já está em uso'
+                    );
+                }
+            }
+
+            $dados['dataClinica'] = $c->getClinicaDate($id);
+
+            $this->loadTemplateAdm('editClinica', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function deleteClinica($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $c = new Clinicas();
+
+            $c->delete($id);
+            header('location: '.BASE_URL.'admin/clinicas?s=success');
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
 }
