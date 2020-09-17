@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
 <div class="page-header">
     <h4 class="page-title">Lista de Clinicas</h4>
     <ol class="breadcrumb">
@@ -26,7 +28,7 @@
         </div>
 
         <?php if(isset($_GET['s']) && $_GET['s'] == 'success'):?>
-            <div class="alert alert-success">Clinica excluída</div>
+            <div class="alert alert-success">Clinica Atualizada</div>
         <?php endif;?>
         
 
@@ -34,63 +36,10 @@
             <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active " id="tab1">
-                        <div class="mail-option">
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        Bulk Actions
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bulk Action</a></li>
-                                        <li><a href="#">Edit</a></li>
-                                        <li><a href="#">Move to Trash</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        All dates
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">January, 2019</a></li>
-                                        <li><a href="#">December, 2018</a></li>
-                                        <li><a href="#">November, 2018</a></li>
-                                        <li><a href="#">October, 2018</a></li>
-                                        <li><a href="#">September, 2018</a></li>
-                                        <li><a href="#">August, 2018</a></li>
-                                        <li><a href="#">July, 2018</a></li>
-                                        <li><a href="#">June, 2018</a></li>
-                                        <li><a href="#">May, 2018</a></li>
-                                        <li><a href="#">April, 2018</a></li>
-                                        <li><a href="#">March, 2018</a></li>
-                                        <li><a href="#">February, 2018</a></li>
-                                        <li><a href="#">January, 2018</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Apply
-                                </a>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Filter
-                                </a>
-                            </div>
-                            <ul class="unstyled inbox-pagination">
-                                <li><span>1-10 of 452 items</span></li>
-                                <li>
-                                    <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="table-responsive border-top">
-                            <table class="table card-table table-bordered table-hover table-vcenter text-nowrap">
-                                <tbody>
+                        
+                        <div class="table-responsive">
+                            <table class="table card-table table-bordered table-hover table-vcenter text-nowrap display" id="listClients">
+                                <thead>
                                     <tr>
                                         <th class="w-1">
                                             <label class="custom-control custom-checkbox">
@@ -102,11 +51,11 @@
                                         <th class="">Nome</th>
                                         <th class="">cnpj</th>
                                         <th class="">Data de Cadastro</th>
-                                        <th>Ações</th>
+                                        <th width="50px">Ações</th>
                                     </tr>
-
+                                </thead>
+                                <tbody>
                                     <?php foreach($clinicasList as $item):?>
-                                       
                                         <tr>
                                             <th>
                                                 <label class="custom-control custom-checkbox">
@@ -121,52 +70,34 @@
                                             <td><?= date('d/m/Y', strtotime($item['date_cadastro'])) .' às '.date('H:i:s', strtotime($item['date_cadastro']));?></td>
                                             <td>
                                                 <a href="<?php echo BASE_URL."admin/editClinica/".$item['id'];?>" class="btn btn-info">Editar</a>
+
+                                                <?php if($item['status'] == 0):?>
+                                                    <a href="<?php echo BASE_URL."admin/updateStatusClinica/".$item['id'];?>" class="btn btn-success">Desbloquear</a>
+                                                <?php elseif($item['status'] == 1):?>
+                                                    <a href="<?php echo BASE_URL."admin/updateStatusClinica/".$item['id'];?>" class="btn btn-warning">Bloquear</a>
+                                                <?php endif;?>
+
+                                                <a href="<?php echo BASE_URL;?>admin/addConsultaClinica/<?php echo $item['id'];?>" class="btn btn-dark">Adicionar Consulta <i class="fa fa-upload fa-spin ml-2"></i></a>
+
+                                                <a href="<?php echo BASE_URL;?>admin/addConsultaClinica/<?php echo $item['id'];?>#consultas" class="btn btn-indigo">Ver Serviços <i class="fa fa-chrome fa-spin ml-2"></i></a>
+
                                                 <a href="<?php echo BASE_URL."admin/deleteClinica/".$item['id'];?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir essa clinica?')">excluir</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;?>
-
                                 </tbody>
                             </table>
-                        </div>
-                        
-                        <div class="mail-option mb-0 mt-4">
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        Bulk Actions
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bulk Action</a></li>
-                                        <li><a href="#">Edit</a></li>
-                                        <li><a href="#">Move to Trash</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Check For Spam
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <ul class="pagination mb-5">
-            <li class="page-item page-prev disabled">
-                <a class="page-link" href="#" tabindex="-1">Prev</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item page-next">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
     </div>
 </div>
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script>
+    
+    $('#listClients').DataTable();
+</script>

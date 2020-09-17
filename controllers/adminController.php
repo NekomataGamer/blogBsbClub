@@ -32,7 +32,10 @@ class adminController extends Controller {
         $dados = array();
 
         if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
-
+            $dash = new Dashboard();
+            
+            $dados['leadsCount'] = $dash->countLeads();
+            $dados['clinicasCount'] = $dash->countClinicas();
         }else{
             header("Location: ".BASE_URL."admin/login");
         }
@@ -528,6 +531,17 @@ class adminController extends Controller {
         }
     }
 
+    public function updateStatusCliente($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $c = new Clientes();
+
+            $c->updateStatus($id);
+            header('location: '.BASE_URL.'admin/clients?s=success');
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
     public function addClinica(){
         if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
             $dados = array();
@@ -591,9 +605,7 @@ class adminController extends Controller {
             $dados = array();
 
             $a = new Admin();
-            $c = new Clinicas();
-
-            
+            $c = new Clinicas(); 
 
             if(isset($_POST['raz_soc']) && !empty($_POST['raz_soc'])){
                 $raz_soc = addslashes($_POST['raz_soc']);
@@ -637,6 +649,95 @@ class adminController extends Controller {
 
             $c->delete($id);
             header('location: '.BASE_URL.'admin/clinicas?s=success');
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function updateStatusClinica($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $c = new Clinicas();
+
+            $c->updateStatus($id);
+            header('location: '.BASE_URL.'admin/clinicas?s=success');
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function addConsultaClinica($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $c = new Clinicas();
+
+            if(isset($_POST['proc']) && !empty($_POST['proc'])){
+                $proc = addslashes($_POST['proc']);
+                $val_coust = addslashes($_POST['val_coust']);
+                $val_sell = addslashes($_POST['val_sell']);
+
+                if($c->addConsulta($proc, $val_coust, $val_sell, $id)){
+
+                    $dados['info'] = array(
+                        'type'=>'success',
+                        'msg'=>'Consulta Adicionada'
+                    );
+                }else{
+                    $dados['info'] = array(
+                        'type'=>'error',
+                        'msg'=>'Não consegui adicionar a consulta'
+                    );
+                }
+            }
+
+            $dados['dataClinica'] = $c->getClinicaDate($id);
+            $dados['serviceList'] = $c->getConsultaList($id);
+
+            $this->loadTemplateAdm('addConsultaClinica', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function editConsultaClinica($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $a = new Admin();
+            $c = new Clinicas(); 
+
+            if(isset($_POST['proc']) && !empty($_POST['proc'])){
+                $proc = addslashes($_POST['proc']);
+                $val_coust = addslashes($_POST['val_coust']);
+                $val_sell = addslashes($_POST['val_sell']);
+
+                if($c->editConsulta($proc, $val_coust, $val_sell, $id)){
+                    $dados['info'] = array(
+                        'type'=>'success',
+                        'msg'=>'Consulta Editada'
+                    );
+                }else{
+                    $dados['info'] = array(
+                        'type'=>'error',
+                        'msg'=>'Este CNPJ já está em uso'
+                    );
+                }
+            }
+
+            $dados['dataConsulta'] = $c->getConsultaData($id);
+
+            $this->loadTemplateAdm('editConsultaClinica', $dados);
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function updateStatusConsultaClinica($id){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $c = new Clinicas();
+
+            $id_clinica = $c->updateStatusConsulta($id);
+            header('location: '.BASE_URL.'admin/addConsultaClinica/'.$id_clinica.'?s=success');
         }else{
             header("Location: ".BASE_URL."admin/login");
         }

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
 <div class="page-header">
     <h4 class="page-title">Lista de Comentarios</h4>
     <ol class="breadcrumb">
@@ -6,27 +8,12 @@
     </ol>
 </div>
 
-
-
 <div class="row">
     <div class="col-lg-12">
-        <div class="panel panel-primary">
-            <div>
-                <div class="user-tabs mb-4">
-                    <!-- Tabs -->
-                    <ul class="nav panel-tabs">
-                        <li class=""><a href="#tab1" class="active" data-toggle="tab">All (452)</a></li>
-                        <li><a href="#tab2" data-toggle="tab">Mine (30)</a></li>
-                        <li><a href="#tab3" data-toggle="tab">Published (20)</a></li>
-                        <li><a href="#tab4" data-toggle="tab">Pending (20)</a></li>
-                        <li><a href="#tab5" data-toggle="tab">Trash (20)</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
 
         <?php if(isset($_GET['s']) && $_GET['s'] == 'success'):?>
-            <div class="alert alert-success">Cliente excluído</div>
+            <div class="alert alert-success">Cliente Atualizado</div>
         <?php endif;?>
         
 
@@ -34,121 +21,55 @@
             <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active " id="tab1">
-                        <div class="mail-option">
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        Bulk Actions
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bulk Action</a></li>
-                                        <li><a href="#">Edit</a></li>
-                                        <li><a href="#">Move to Trash</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        All dates
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">January, 2019</a></li>
-                                        <li><a href="#">December, 2018</a></li>
-                                        <li><a href="#">November, 2018</a></li>
-                                        <li><a href="#">October, 2018</a></li>
-                                        <li><a href="#">September, 2018</a></li>
-                                        <li><a href="#">August, 2018</a></li>
-                                        <li><a href="#">July, 2018</a></li>
-                                        <li><a href="#">June, 2018</a></li>
-                                        <li><a href="#">May, 2018</a></li>
-                                        <li><a href="#">April, 2018</a></li>
-                                        <li><a href="#">March, 2018</a></li>
-                                        <li><a href="#">February, 2018</a></li>
-                                        <li><a href="#">January, 2018</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Apply
-                                </a>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Filter
-                                </a>
-                            </div>
-                            <ul class="unstyled inbox-pagination">
-                                <li><span>1-10 of 452 items</span></li>
-                                <li>
-                                    <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="table-responsive border-top">
-                            <table class="table card-table table-bordered table-hover table-vcenter text-nowrap">
-                                <tbody>
-                                    <tr>
-                                        <th class="w-1">
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
-                                                <span class="custom-control-label"></span>
-                                            </label>
-                                        </th>
-                                        <th class="w-1">#</th>
-                                        <th class="">Nome</th>
-                                        <th class="">cpf</th>
-                                        <th class="">Data de Cadastro</th>
-                                        <th>Ações</th>
-                                    </tr>
-
-                                    <?php foreach($clientList as $item):?>
-                                       
-                                        <tr>
-                                            <th>
-                                                <label class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
-                                                    <span class="custom-control-label"></span>
-                                                </label>
-                                            </th>
-                                            <td><a href="#" class="btn-link">#<?php echo $item['id'];?></a>
-                                            </td>
-                                            <td><?php echo $item['nome'];?></td>
-                                            <td max-width="200px"><?= $item['cpf'];?></td>
-                                            <td><?= date('d/m/Y', strtotime($item['date_cadastro'])) .' às '.date('H:i:s', strtotime($item['date_cadastro']));?></td>
-                                            <td>
-                                                <a href="<?php echo BASE_URL."admin/editCliente/".$item['id'];?>" class="btn btn-info">Editar</a>
-                                                <a href="<?php echo BASE_URL."admin/deleteCliente/".$item['id'];?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir esse cliente?')">excluir</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach;?>
-
-                                </tbody>
-                            </table>
-                        </div>
                         
-                        <div class="mail-option mb-0 mt-4">
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        Bulk Actions
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bulk Action</a></li>
-                                        <li><a href="#">Edit</a></li>
-                                        <li><a href="#">Move to Trash</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Check For Spam
-                                </a>
-                            </div>
+                    <table class="table card-table table-bordered table-hover table-vcenter text-nowrap display" id="listClients">
+                        <thead>
+                            <tr>
+                                <th class="w-1">
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </th>
+                                <th scope="col" class="w-1">#</th>
+                                <th scope="col" class="">Nome</th>
+                                <th scope="col" class="">cpf</th>
+                                <th scope="col" class="">Data de Cadastro</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($clientList as $item):?> 
+                            <tr>
+                                <th>
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="checkbox" value="checkbox">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </th>
+                                <td><a href="#" class="btn-link">#<?php echo $item['id'];?></a>
+                                </td>
+                                <td><?php echo $item['nome'];?></td>
+                                <td max-width="200px"><?= $item['cpf'];?></td>
+                                <td><?= date('d/m/Y', strtotime($item['date_cadastro'])) .' às '.date('H:i:s', strtotime($item['date_cadastro']));?></td>
+                                <td>
+                                    <a href="<?php echo BASE_URL."admin/editCliente/".$item['id'];?>" class="btn btn-info">Editar</a>
+
+                                    <?php if($item['status'] == 0):?>
+                                        <a href="<?php echo BASE_URL."admin/updateStatusCliente/".$item['id'];?>" class="btn btn-success">Desbloquear</a>
+                                    <?php elseif($item['status'] == 1):?>
+                                        <a href="<?php echo BASE_URL."admin/updateStatusCliente/".$item['id'];?>" class="btn btn-warning">Bloquear</a>
+                                    <?php endif;?>
+
+                                    <a href="<?php echo BASE_URL."admin/deleteCliente/".$item['id'];?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir esse cliente?')">excluir</a>
+                                </td>
+                            </tr>
+                        <?php endforeach;?>
+                        </tbody>
+                        </table>
+
+                        <div class="table-responsive border-top">
+                            
                         </div>
                     </div>
                 </div>
@@ -170,3 +91,11 @@
         </ul>
     </div>
 </div>
+
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script>
+    
+    $('#listClients').DataTable();
+</script>

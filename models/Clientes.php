@@ -91,5 +91,35 @@ class Clientes extends Model{
 
         return true;
     }
-    
+
+    public function updateStatus($id){
+        $sql = "SELECT status FROM clientes WHERE id = :id";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $info = $sql->fetch();
+
+            if($info['status'] == 1){
+                $sql = "UPDATE clientes SET status = :status WHERE id = :id";
+                $sql = $this->db->prepare($sql);
+                $sql->bindValue(':status', 0);
+                $sql->bindValue(':id', $id);
+                $sql->execute();
+
+                return true;
+            }elseif($info['status'] == 0){
+                $sql = "UPDATE clientes SET status = :status WHERE id = :id";
+                $sql = $this->db->prepare($sql);
+                $sql->bindValue(':status', 1);
+                $sql->bindValue(':id', $id);
+                $sql->execute();
+
+                return true;
+            }
+        }else{
+            return false;
+        }
+    }
 }

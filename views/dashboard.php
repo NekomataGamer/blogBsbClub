@@ -1,9 +1,8 @@
-
         <div class="page-header">
             <h4 class="page-title">Dashboard</h4>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard 01</li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard </li>
             </ol>
         </div>
 
@@ -11,75 +10,77 @@
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 ">
                 <div class="card overflow-hidden">
                     <div class="card-header">
-                        <h3 class="card-title">Price</h3>
-                        <div class="card-options"> <a class="btn btn-sm btn-primary" href="#">View</a> </div>
+                        <h3 class="card-title">Leads</h3>
+                        <div class="card-options"> <a class="btn btn-sm btn-primary" href="<?php echo BASE_URL;?>admin/listLeads">View</a> </div>
                     </div>
                     <div class="card-body ">
-                        <h5 class="">Total Price</h5>
-                        <h2 class="text-dark  mt-0 ">4,657</h2>
+                        <h5 class="">Total de Leads</h5>
+                        <h2 class="text-dark counter mt-0 "><?php echo $leadsCount;?></h2>
                         <div class="progress progress-sm mt-0 mb-2">
                             <div class="progress-bar bg-primary w-75" role="progressbar"></div>
                         </div>
-                        <div class=""><i class="fa fa-caret-up text-green"></i>10% increases</div>
+                        <div class=""><i class="fa fa-caret-up text-green"></i> Leads</div>
                     </div>
                 </div>
             </div>
+             
             <div class=" col-sm-12 col-md-6 col-lg-6 col-xl-3">
                 <div class="card overflow-hidden">
                     <div class="card-header">
-                        <h3 class="card-title">Stock</h3>
-                        <div class="card-options"> <a class="btn btn-sm btn-secondary" href="#">View</a> </div>
+                        <h3 class="card-title">Clinicas</h3>
+                        <div class="card-options"> <a class="btn btn-sm btn-secondary" href="<?php echo BASE_URL;?>admin/clinicas">View</a> </div>
                     </div>
                     <div class="card-body ">
-                        <h5 class="">Total Stock</h5>
-                        <h2 class="text-dark  mt-0 ">2,592</h2>
+                        <h5 class="">Total Clinicas</h5>
+                        <h2 class="text-dark counter mt-0 "><?php echo $clinicasCount;?></h2>
                         <div class="progress progress-sm mt-0 mb-2">
                             <div class="progress-bar bg-secondary w-45" role="progressbar"></div>
                         </div>
-                        <div class=""><i class="fa fa-caret-down text-danger"></i>12% decrease</div>
+                        <div class=""><i class="fa fa-caret-down text-danger"></i>Clinicas Cadastradas</div>
                     </div>
                 </div>
             </div>
-            <div class=" col-sm-12 col-md-6 col-lg-6 col-xl-3">
-                <div class="card overflow-hidden">
-                    <div class="card-header">
-                        <h3 class="card-title">Revenue</h3>
-                        <div class="card-options"> <a class="btn btn-sm btn-warning" href="#">View</a> </div>
-                    </div>
-                    <div class="card-body ">
-                        <h5 class="">Total Revenue</h5>
-                        <h2 class="text-dark  mt-0 ">3,517</h2>
-                        <div class="progress progress-sm mt-0 mb-2">
-                            <div class="progress-bar bg-warning w-50" role="progressbar"></div>
-                        </div>
-                        <div class=""><i class="fa fa-caret-down text-danger"></i>5% decrease</div>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 ">
                 <div class="card overflow-hidden">
                     <div class="card-header">
-                        <h3 class="card-title">Investiment</h3>
+                        <h3 class="card-title">Receita Total</h3>
                         <div class="card-options"> <a class="btn btn-sm btn-success" href="#">View</a> </div>
                     </div>
                     <div class="card-body ">
-                        <h5 class="">Total Investiment</h5>
-                        <h2 class="text-dark  mt-0  ">5,759</h2>
+                        <h5 class="">Receita Total</h5>
+                        <h2 class="text-dark mt-0  ">R$ <span class="counter">5,759</span></h2>
                         <div class="progress progress-sm mt-0 mb-2">
                             <div class="progress-bar bg-success w-25" role="progressbar"></div>
                         </div>
-                        <div class=""><i class="fa fa-caret-up text-success"></i>15% increase</div>
+                        <div class=""><i class="fa fa-caret-up text-success"></i>Receita</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 ">
+                <div class="card overflow-hidden">
+                    <div class="card-header">
+                        <h3 class="card-title">Despesas Total</h3>
+                        <div class="card-options"> <a class="btn btn-sm btn-danger" href="#">View</a> </div>
+                    </div>
+                    <div class="card-body ">
+                        <h5 class="">Total Despesas</h5>
+                        <h2 class="text-dark mt-0">R$ <span class="counter">5,759</span></h2>
+                        <div class="progress progress-sm mt-0 mb-2">
+                            <div class="progress-bar bg-danger w-25" role="progressbar"></div>
+                        </div>
+                        <div class=""><i class="fa fa-caret-up text-success"></i>Despesas</div>
                     </div>
                 </div>
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-xl-8 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Last Year Overview</h3>
+                        <h3 class="card-title">Grafico de Receitas e Despesas</h3>
                     </div>
                     <div class="card-body">
                         <div class="chart-wrapper">
@@ -91,15 +92,15 @@
             <div class="col-xl-4 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Activity</h3>
+                        <h3 class="card-title">Ultimas Consultas</h3>
                     </div>
                     <div class="card-body">
                         <div class="activity">
                             <img src="../../assets/images/faces/male/24.jpg" alt="" class="img-activity">
                             <div class="time-activity">
                                 <div class="item-activity">
-                                    <p class="mb-0"><b>Adam	Berry</b> Add a new projects <b> AngularJS Template</b></p>
-                                    <small class="text-muted ">30 mins ago</small>
+                                    <p class="mb-0"><b>Adam	Berry</b> Fez uma consulta em <b> Bluelife</b></p>
+                                    <small class="text-muted ">30 min atrás</small>
                                 </div>
                             </div>
                             <img src="../../assets/images/faces/female/10.jpg" alt="" class="img-activity">
@@ -130,7 +131,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-4 col-lg-12 col-md-12">
+            <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Customer Satisfaction</h3>
@@ -186,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+            <!-- <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Developing Team</div>
@@ -195,7 +196,7 @@
                         <div class="ibox teams mb-30 bg-boxshadow">
                             <!-- Ibox Content -->
                             <div class="ibox-content teams">
-                                <!-- Members -->
+                                <!-- Members 
                                 <div class="avatar-list avatar-list-stacked">
                                     <span class="avatar brround cover-image cover-image" data-image-src="../../assets/images/faces/female/12.jpg" ></span>
                                     <span class="avatar brround cover-image cover-image" data-image-src="../../assets/images/faces/female/21.jpg" ></span>
@@ -204,12 +205,12 @@
                                     <span class="avatar brround cover-image cover-image" data-image-src="../../assets/images/faces/male/34.jpg"></span>
                                     <span class="avatar brround cover-image cover-image">+8</span>
                                 </div>
-                                <!-- Team Board Details -->
+                                <!-- Team Board Details 
                                 <div class="teams-board-details mt-3">
                                     <h4 class="font-weight-semibold">About Developing Team</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi. Contrary to popular belief, Lorem Ipsum is not simply random text classical Latin </p>
                                 </div>
-                                <!-- Progress Details -->
+                                <!-- Progress Details 
                                 <span class="font-weight-semibold">Status of current project:</span>
                                 <div class="progress-details-teams mt-2 mb-4">
                                     <div class="stat-percent mb-2">58%</div>
@@ -235,124 +236,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-4 col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Todo List</h3>
-                        <div class="card-options">
-                            <a class="btn btn-sm btn-primary " href="#"><i class="fa fa-plus"></i> Add Task</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="custom-controls-stacked checklist-task">
-                            <label class="custom-control custom-checkbox mb-3 checklist-desc">
-                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked="">
-                                <span class="custom-control-label">vero eos et accusamus et iusto odio dignissimos ducimus</span>
-                                <div class="check-data d-flex mt-1">
-                                    <span class="text-muted">Completed 2h ago</span>
-                                    <div class="check-icon ml-auto">
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil-square-o "></i> </span>
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="fa fa-trash-o"></i></span>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="custom-control custom-checkbox mb-3 checklist-desc">
-                                <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
-                                <span class="custom-control-label"> et iusto odio dignissimos ducimus</span>
-                                <div class="check-data d-flex mt-1">
-                                    <span class="text-muted">Completed 8h ago</span>
-                                    <div class="check-icon ml-auto">
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil-square-o "></i> </span>
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="fa fa-trash-o"></i></span>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="custom-control custom-checkbox mb-3 checklist-desc">
-                                <input type="checkbox" class="custom-control-input" name="example-checkbox3" value="option3" checked="">
-                                <span class="custom-control-label"> eos  accusamus  iusto odio dignissimos </span>
-                                <div class="check-data d-flex mt-1">
-                                    <span class="text-muted">Completed 4h ago</span>
-                                    <div class="check-icon ml-auto">
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil-square-o "></i> </span>
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="fa fa-trash-o"></i></span>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="custom-control custom-checkbox checklist-desc">
-                                <input type="checkbox" class="custom-control-input" name="example-checkbox4" value="option4">
-                                <span class="custom-control-label">vet accusamus et iusto odio dignissimos </span>
-                                <div class="check-data d-flex mt-1">
-                                    <span class="text-muted">Completed 5h ago</span>
-                                    <div class="check-icon ml-auto">
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil-square-o "></i> </span>
-                                        <span class="text-muted" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="fa fa-trash-o"></i></span>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-12">
-                <div class="card">
-                    <div class="arrow-ribbon bg-danger">sale</div>
-                    <div class="item-card7-img">
-                        <div class="item-card7-imgs">
-                            <a href="realestate.html"></a>
-                            <img src="../../assets/images/products/products/h1.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="realestate.html" class="text-white"> Real Estate</a>
-                            <h4  class="font-weight-semibold mb-0">$389</h4>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="item-card7-desc">
-                            <a href="realestate.html" class="text-dark"><h4 class="font-weight-semibold">Apartments</h4></a>
-                        </div>
-                        <div class="item-card7-text">
-                            <ul class="icon-card mb-0">
-                                <li class=""><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                <li class="mb-0"><a href="#" class="icons"><i class="icon icon-user text-muted mr-1"></i> Sally Peake</a></li>
-                                <li class="mb-0"><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 567 9876 087</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-12">
-                <div class="card">
-                    <div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">featured</span></div>
-                    <div class="item-card7-img">
-                        <div class="item-card7-imgs">
-                            <a href="jobs.html"></a>
-                            <img src="../../assets/images/products/products/j2.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="jobs.html" class="text-white"> Jobs</a>
-                            <h4  class="font-weight-semibold mb-0">$854</h4>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="item-card7-desc">
-                            <a href="jobs.html" class="text-dark"><h4 class="font-weight-semibold">Hair dresser-Beauticia</h4></a>
-                        </div>
-                        <div class="item-card7-text">
-                            <ul class="icon-card mb-0">
-                                <li class=""><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                <li class="mb-0"><a href="#" class="icons"><i class="icon icon-user text-muted mr-1"></i> Sally Peake</a></li>
-                                <li class="mb-0"><a href="#" class="icons"><i class="icon icon-briefcase text-muted mr-1"></i>Beauty Span</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
+</div>
 

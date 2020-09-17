@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 <div class="page-header">
     <h4 class="page-title">Lista de Comentarios</h4>
     <ol class="breadcrumb">
@@ -27,63 +28,11 @@
             <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active " id="tab1">
-                        <div class="mail-option">
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        Bulk Actions
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bulk Action</a></li>
-                                        <li><a href="#">Edit</a></li>
-                                        <li><a href="#">Move to Trash</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="chk-all">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                        All dates
-                                        <i class="fa fa-angle-down "></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">January, 2019</a></li>
-                                        <li><a href="#">December, 2018</a></li>
-                                        <li><a href="#">November, 2018</a></li>
-                                        <li><a href="#">October, 2018</a></li>
-                                        <li><a href="#">September, 2018</a></li>
-                                        <li><a href="#">August, 2018</a></li>
-                                        <li><a href="#">July, 2018</a></li>
-                                        <li><a href="#">June, 2018</a></li>
-                                        <li><a href="#">May, 2018</a></li>
-                                        <li><a href="#">April, 2018</a></li>
-                                        <li><a href="#">March, 2018</a></li>
-                                        <li><a href="#">February, 2018</a></li>
-                                        <li><a href="#">January, 2018</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Apply
-                                </a>
-                            </div>
-                            <div class="btn-group hidden-phone">
-                                <a href="#" class="btn" aria-expanded="false">
-                                    Filter
-                                </a>
-                            </div>
-                            <ul class="unstyled inbox-pagination">
-                                <li><span>1-10 of 452 items</span></li>
-                                <li>
-                                    <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                        
                         <div class="table-responsive border-top">
-                            <table class="table card-table table-bordered table-hover table-vcenter text-nowrap">
-                                <tbody>
+
+                            <table class="table card-table table-bordered table-hover table-vcenter text-nowrap display" id="listClients">
+                                <thead>
                                     <tr>
                                         <th class="w-1">
                                             <label class="custom-control custom-checkbox">
@@ -97,7 +46,8 @@
                                         <th class="">Comentario</th>
                                         <th>Ações</th>
                                     </tr>
-
+                                </thead>
+                                <tbody>
                                     <?php foreach($commentList as $item):?>
                                         <?php 
                                             $a = new Admin();
@@ -121,7 +71,6 @@
                                             </td>
                                         </tr>
                                     <?php endforeach;?>
-
                                 </tbody>
                             </table>
                         </div>
@@ -166,3 +115,10 @@
         </ul>
     </div>
 </div>
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script>
+    
+    $('#listClients').DataTable();
+</script>
