@@ -84,7 +84,7 @@
                     </div>
                     <div class="card-body">
                         <div class="chart-wrapper">
-                            <canvas id="sales-status" class="chart-dropshadow h-280"></canvas>
+                            <canvas id="rel1" width="100%" min-height="100px" max-height="100px"></canvas>
                         </div>
                     </div>
                 </div>
@@ -240,4 +240,5 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script type="text/javascript" src="<?php echo BASE_URL;?>assets/blog/js/script_chart.js"></script>

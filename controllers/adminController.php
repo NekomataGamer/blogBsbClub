@@ -418,7 +418,7 @@ class adminController extends Controller {
     }
 
     // ----------------------------------------------------------------------------------------------------------------------------
-    // Area de consultas
+    // BSB MEDICAL
 
     public function addClient(){
         if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
@@ -738,6 +738,56 @@ class adminController extends Controller {
 
             $id_clinica = $c->updateStatusConsulta($id);
             header('location: '.BASE_URL.'admin/addConsultaClinica/'.$id_clinica.'?s=success');
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function newsAppointments(){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $c = new Clinicas();
+            $consultas = new Consultas();
+
+            $dados['newAppointments'] = $consultas->getNewAppointments();
+
+            $this->loadTemplateAdm('newsAppointments', $dados);
+            
+        }else{
+            header("Location: ".BASE_URL."admin/login");
+        }
+    }
+
+    public function makeAppointment($id_consulta){
+        if(isset($_SESSION['login_adm_bsb']) && !empty($_SESSION['login_adm_bsb'])){
+            $dados = array();
+
+            $c = new Clinicas();
+            $clientes = new Clientes();
+            $consultas = new Consultas();
+
+            $dados_consulta = $consultas->getAppintmentMaked($id_consulta);
+
+            if(isset($_POST['dia']) && !empty($_POST['dia'])){
+                $dia = addslashes($_POST['dia']);
+                $mes = addslashes($_POST['mes']);
+                $hora = addslashes($_POST['hora']);
+                $minutos = addslashes($_POST['minutos']);
+
+                
+
+
+                if($consultas->makeAppointment($dia, $mes, $hora, $minutos, $id_consulta)){
+
+                }
+            }
+
+            $dados['clinicas'] = $c->getClinicaDate($dados_consulta['id_clinica']);
+            $dados['clientes'] = $clientes->getClientData($dados_consulta['id_cliente']);
+            $dados['consultas'] = $dados_consulta;
+            
+
+            $this->loadTemplateAdm('makeNewAppointment', $dados);
+            
         }else{
             header("Location: ".BASE_URL."admin/login");
         }

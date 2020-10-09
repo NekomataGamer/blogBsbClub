@@ -382,6 +382,18 @@
 								</li>
 							</ul>
 						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-heartbeat"></i><span class="side-menu__label">Consultas</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="<?php echo BASE_URL."admin/newsAppointments";?>" class="slide-item">Novas Consultas</a>
+								</li>
+								<li>
+									<a href="<?php echo BASE_URL."admin/clinicas/";?>" class="slide-item">Todas as Consultas</a>
+								</li>
+							</ul>
+						</li>
 						
 					</ul>
 					<div class="app-sidebar-footer">
@@ -413,7 +425,7 @@
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
 						<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-							Copyright © 2019 <a href="#">Claylist</a>. Designed by <a href="#">Spruko</a> All rights reserved.
+							Copyright © <?php date('d/m/Y')?> <a href="#">Coser Salvador Group</a>
 						</div>
 					</div>
 				</div>
